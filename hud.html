@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<title>Untitled Document</title>
+<script type="text/javascript" src="./core/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<link href="ui.css" rel="stylesheet" type="text/css" />
+<link href="hud.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="noSelect noDrag">    
+	<div class="hud">
+        <div class="hud_food">
+        	<div class="foodValue"></div>
+        </div>
+        <div class="hudButtons">
+            <div class="hudButton btnSpellbook buttonTransform"></div>
+            <div class="hudButton btnPause buttonTransform"></div>
+            <div class="hudButton btnEndTurn buttonTransform"></div>
+		</div>
+        <div class="unitStats">
+        	<div class="unitNameBg">
+				<div class="unitName"></div>
+                <div class="smallInfoButton"></div>
+            </div>
+        	<div class="unitStatHud unitInfoStatBg unitInfoStatHealth">
+            	<div class="unitInfoStatValue"></div>
+            </div>
+            <div class="unitStatHud unitInfoStatBg unitInfoStatAttack">
+            	<div class="unitInfoStatValue"></div>
+            </div>
+            <div class="unitStatHud unitInfoStatLargeBg unitInfoStatRange">
+            	<div class="unitInfoStatValue"></div>
+            </div>
+            <div class="unitStatHud unitInfoStatBg unitInfoStatMovement">
+            	<div class="unitInfoStatValue"></div>
+            </div>
+            <div class="unitStatHud unitInfoStatBg unitInfoStatVision">
+            	<div class="unitInfoStatValue"></div>
+            </div>
+        </div>
+    </div>
+    <div class="myTribeWindow windowUniversal hidden">
+        <div class="windowUniversalContents mainBgColour">
+        </div>
+    	<div class="windowUniversalBorder">
+        </div>
+        <div class="windowUniversalContents scrollX skinnedScrollbar">
+            <div class="btnUnit btnUnitFirst">
+                <div class="btnUnitHitbox">
+                    <div class="btnSquareIcon iconPlaceholder"></div>
+                    <div class="btnSquareBorder imageSquareSelected buttonSprite_hover"></div>
+                    <div class="btnSquarePriceBg">
+                        <div class="btnSquarePriceIcon iconBattleBadgeSmall btnUnitPriceFood "></div>
+                        <div class="btnSquarePriceValue"></div>
+                    </div>
+                </div>
+                <div class="btnSquareLabel">Spear Warrior</div>
+                <div class="btnSquareInfo buttonSprite_hover"></div>
+            </div>
+            <div class="btnUnit">
+                <div class="btnUnitHitbox">
+                    <div class="btnSquareIcon iconPlaceholder"></div>
+                    <div class="btnSquareBorder imageSquareUnlocked buttonSprite_hover"></div>
+                    <div class="btnSquarePriceBg">
+                        <div class="btnSquarePriceIcon iconBattleBadgeSmall btnUnitPriceFood "></div>
+                        <div class="btnSquarePriceValue">9999</div>
+                    </div>
+                </div>
+                <div class="btnSquareLabel">Spear Warrior</div>
+                <div class="btnSquareInfo buttonSprite_hover"></div>
+            </div>
+            <div class="btnUnit">
+                <div class="btnUnitHitbox">
+                    <div class="btnSquareIcon iconPlaceholder"></div>
+                    <div class="btnSquareBorder imageSquareUnlocked buttonSprite_hover"></div>
+                    <div class="btnSquarePriceBg">
+                        <div class="btnSquarePriceIcon iconBattleBadgeSmall btnUnitPriceFood "></div>
+                        <div class="btnSquarePriceValue">9999</div>
+                    </div>
+                </div>
+                <div class="btnSquareLabel">Spear Warrior</div>
+                <div class="btnSquareInfo buttonSprite_hover"></div>
+            </div>
+            <div class="btnUnit">
+                <div class="btnUnitHitbox">
+                    <div class="btnSquareIcon iconPlaceholder"></div>
+                    <div class="btnSquareBorder imageSquareUnlocked buttonSprite_hover"></div>
+                    <div class="btnSquarePriceBg">
+                        <div class="btnSquarePriceIcon iconBattleBadgeSmall btnUnitPriceFood "></div>
+                        <div class="btnSquarePriceValue">9999</div>
+                    </div>
+                </div>
+                <div class="btnSquareLabel">Spear Warrior</div>
+                <div class="btnSquareInfo buttonSprite_hover"></div>
+            </div>
+            <div class="btnUnit btnUnitLast">
+                <div class="btnUnitHitbox">
+                    <div class="btnSquareIcon iconPlaceholder"></div>
+                    <div class="btnSquareBorder imageSquareUnlocked buttonSprite_hover"></div>
+                    <div class="btnSquarePriceBg">
+                        <div class="btnSquarePriceIcon iconBattleBadgeSmall btnUnitPriceFood "></div>
+                        <div class="btnSquarePriceValue">9999</div>
+                    </div>
+                </div>
+                <div class="btnSquareLabel">Spear Warrior</div>
+                <div class="btnSquareInfo buttonSprite_hover"></div>
+            </div>
+        </div>
+
+		<div class="windowTitleNudge">
+            <h1>Train a Unit</h1>
+        </div>
+
+        <div id="trainUnitButton" class="trainButton buttonSprite_hover_active">
+        </div>
+        
+        <div class="windowBack headerButtonBackImage buttonSprite_hover_active">
+        </div>
+
+    </div>
+</html>

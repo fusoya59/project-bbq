@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+    <!--<script type="text/javascript" src="core/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="common.js"></script>-->
+<link href="ui.css" rel="stylesheet" type="text/css" />
+<link href="friends.css" rel="stylesheet" type="text/css" />
+</head>
+
+<style type="text/css">
+</style>
+
+<body class="noSelect noDrag">
+<div class="mainWindow mainBgColour">
+	<div class="header">
+        <div class="headerButtonLeft">
+	    	<a href="mainMenu2.html">
+        		<div class="headerButtonBackImage buttonSprite_hover_active"></div>
+    	    </a>
+        </div>
+        <div class="headerTitle">
+        	<h1>Friends</h1>
+        </div>
+        <div class="headerButtonRight">
+    		<div id="btnAddFriend" class="btnMore buttonSprite_hover"></div>
+        </div>
+    </div>
+    <div id="friendContainer" class="content scrollY skinnedScrollbar">
+        <div class="btnBattle btnBattleMargin">
+            <div class="btnBattleChiefImage iconPlaceholder"></div>
+            <div class="btnBattleBg btnBattleFinishedImage">
+                <div class="btnBattleContent">
+                    <div class="btnBattleMap">Waiting for</div>
+                    <div class="btnBattleUsername" style="text-align:right">SuppaDuppaX</div> 
+                    <div class="btnBattleMap">to reply</div>                   
+                </div>            
+            </div>
+        </div>
+        <div class="btnBattle btnBattleMargin">
+            <div class="btnBattleChiefImage iconPlaceholder"></div>
+            <div class="btnBattleBg btnBattleWaitingImage">
+                <div class="btnBattleContent">
+                    <div class="btnBattleMap">Request from</div>
+                    <div class="btnBattleUsername" style="text-align:right">SuppaDuppaX</div>                    
+                    <div style="margin-top:35px">
+                        <div class="btnAccept" style="margin-left:5px" ></div>                    
+                        <div class="btnDecline" ></div>                    
+                    </div>
+                </div>            
+            </div>
+        </div>
+        <div class="btnBattle btnBattleMargin">
+            <div class="btnBattleChiefImage iconPlaceholder"></div>
+            <div class="btnBattleBg btnBattleYourTurnImage">
+                <div class="btnBattleContent">
+                    <div class="btnBattleUsername">SuppaDuppaX</div>
+                    <div class="windowUniversalCompactButton btnUnfriend"></div>
+                	<div class="windowUniversalCompactButton btnBattleFriend"></div>
+                </div>
+            </div>
+        </div>
+    </div>            
+    
+    <div id="footer" class="footer"></div>    
+</div>
+
+<div id="" class="fadeBlack hidden"></div>
+
+<div class="windowUniversalCompact" style="display:none">
+	<div class="windowUniversalCompactBorder"></div>
+    <div class="windowUniversalCompactContents mainBgColour">
+    	<div class="windowUniversalCompactButton btnBattleFriend"></div>
+    	<div class="windowUniversalCompactButton btnUnfriend"></div>
+    </div>
+</div>
+
+<div id="addFriendWindow" class="windowUniversalSmall hidden">
+	<div class="windowUniversalSmallBorder"></div>
+	<div class="windowUniversalTitle"><h1>Add Friend</h1></div>
+    <div id="addFriendClose" class="windowUniversalClose buttonSprite_hover_active"></div>
+    <div class="windowUniversalSmallContents mainBgColour">
+    	<div class="addFriendInput"><input id="friendName" placeholder="Username"/></div>
+        <div id='friendSend' class="btnSend"></div>
+    </div>
+</div>
+    
+
+<div id="purchaseWindow" class="windowUniversal hidden"></div>
+</body>
+<script type="text/javascript">
+    bbq.frontend.setupFriends();
+</script>
+</html>

@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <title>HUD test</title>
+    <script type="text/javascript" src="./core/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="./core/utils.js"></script>
+    <script type="text/javascript" src="./core/resources.js"></script>
+    <script type="text/javascript" src="./bbq/hud.js"></script>
+    <script type="text/javascript" src="./bbq/units.js"></script>
+    <script type="text/javascript" src="./bbq/unitset.js"></script>
+    <script type="text/javascript" src="./assets/graphics.js"></script>
+    <script type="text/javascript" >
+        boc.resources.GraphicsManager.load(bbq.assets.graphics);
+    </script>
+</head>
+<body>
+    <div id="hud"></div>
+    <script type="text/javascript">
+        var myhud,
+            myUnitSet = new bbq.UnitSet('Blue', ['SpearWarrior', 'DartBlower', 'Catapult', 'Enforcer', 'Gatherer']);
+
+        function onHudLoaded() {
+            var hud = new bbq.hud.HtmlHud('hud');
+            myhud = hud;
+            // test setters
+            hud.attack(15);
+            hud.food(33);
+            hud.health(8);
+            hud.movement(3);
+            hud.name('Enforcer');
+            hud.range('1-1');
+            hud.vision(2);
+
+            // test getters
+            console.log(hud.attack()); 
+            console.log(hud.food()); 
+            console.log(hud.health()); 
+            console.log(hud.movement()); 
+            console.log(hud.name()); 
+            console.log(hud.range()); 
+            console.log(hud.vision()); 
+
+            // open window
+            hud.openTrainWindow(myUnitSet);
+
+            // test events
+            // - spellbook
+            // - pause
+            // - endturn
+            // - info
+            // - trainok
+            // - trainback
+            // - traininfo
+            // - trainselect
+            hud.on('spellbook', function (p) {
+                console.log('spell book activated');
+            });
+            hud.on('pause', function (p) {
+                console.log('paused');
+            });
+            hud.on('endturn', function (p) {
+                console.log('end turn');
+            });
+            hud.on('info', function (p) {
+                console.log('info box');
+            });
+            hud.on('trainok', function (p) {
+                console.log('train this unit');
+            });
+            hud.on('trainback', function (p) {
+                console.log('close this training window');
+            });
+            hud.on('traininfo', function (p) {
+                console.log('unit information button');
+            });
+            hud.on('trainselect', function (p) {
+                console.log('selected unit');
+            });            
+        }
+
+        $('#hud').load('hud.html', onHudLoaded);
+    </script>
+</body>
+</html>

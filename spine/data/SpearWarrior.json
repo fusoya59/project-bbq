@@ -1,0 +1,264 @@
+{
+"bones": [
+	{ "name": "root", "y": 1.16 },
+	{ "name": "cog", "parent": "root", "y": -1.16 },
+	{ "name": "Pelvis", "parent": "cog", "length": 5, "x": -0.12, "y": 1.56, "rotation": -89.6 },
+	{ "name": "Spine", "parent": "cog", "length": 15.65, "x": -0.36, "y": 2.39, "rotation": 90 },
+	{ "name": "Head", "parent": "Spine", "length": 57.42, "x": 13.05, "rotation": 0.45 },
+	{ "name": "Kilt", "parent": "Pelvis", "x": 1.56, "y": 0.11, "rotation": 89.6 },
+	{ "name": "leftLeg", "parent": "Pelvis", "length": 12.19, "x": 6.79, "y": 4.27, "rotation": 356.63 },
+	{ "name": "leftShoulder", "parent": "Spine", "length": 10.69, "x": 12.65, "y": -11.08, "rotation": -147.52 },
+	{ "name": "rightLeg", "parent": "Pelvis", "length": 12.19, "x": 6.69, "y": -4.28, "rotation": -3.36 },
+	{ "name": "rightShoulder", "parent": "Spine", "length": 6.48, "x": 12.17, "y": 10.44, "rotation": 162.93 },
+	{ "name": "R_Elbow", "parent": "rightShoulder", "length": 7.78, "x": 9.64, "y": -1.1, "rotation": -45.49 },
+	{ "name": "leftElbow", "parent": "leftShoulder", "length": 6.78, "x": 8.37, "y": 0.94, "rotation": 311.51 },
+	{ "name": "R_Hand", "parent": "R_Elbow", "length": 6.48, "x": 7.75, "y": 0.03, "rotation": -128.77 },
+	{ "name": "leftHand", "parent": "leftElbow", "length": 6.98, "x": 7.53, "y": -0.34, "rotation": -21.48 }
+],
+"slots": [
+	{ "name": "leftLeg", "bone": "leftLeg", "attachment": "leftLeg" },
+	{ "name": "rightLeg", "bone": "rightLeg", "attachment": "rightLeg" },
+	{ "name": "rightUpperArm", "bone": "rightShoulder", "attachment": "rightUpperArm" },
+	{ "name": "rightLowerArm", "bone": "R_Elbow", "attachment": "rightLowerArm" },
+	{ "name": "torso", "bone": "Spine", "attachment": "torso" },
+	{ "name": "kilt", "bone": "Kilt", "attachment": "kilt" },
+	{ "name": "leftUpperArm", "bone": "leftShoulder", "attachment": "leftUpperArm" },
+	{ "name": "leftLowerArm", "bone": "leftElbow", "attachment": "leftLowerArm" },
+	{ "name": "head", "bone": "Head", "attachment": "head" },
+	{ "name": "hat", "bone": "Head", "attachment": "hat" },
+	{ "name": "face2", "bone": "Head", "attachment": "facepaint2" },
+	{ "name": "face1", "bone": "Head", "attachment": "facepaint1" },
+	{ "name": "weapon", "bone": "R_Hand", "attachment": "weapon" },
+	{ "name": "leftHand", "bone": "leftHand", "attachment": "leftHand" },
+	{ "name": "rightHand", "bone": "R_Hand", "attachment": "rightHand" },
+	{ "name": "leftElbow", "bone": "leftElbow" },
+	{ "name": "R_Elbow", "bone": "R_Elbow" },
+	{ "name": "leftElbow2", "bone": "leftElbow" },
+	{ "name": "R_Elbow2", "bone": "R_Elbow" }
+],
+"skins": {
+	"spearwarrior_default_blue": {
+		"face1": {
+			"facepaint1": { "name": "default/blue/facepaint_left", "x": 7.79, "y": 26.4, "rotation": -90.45, "width": 9, "height": 14 }
+		},
+		"face2": {
+			"facepaint2": { "name": "default/blue/facepaint_right", "x": 8.35, "y": -19.83, "rotation": -90.45, "width": 16, "height": 15 }
+		},
+		"hat": {
+			"hat": { "name": "default/blue/headband", "x": 45.32, "y": -3.24, "rotation": -90.45, "width": 78, "height": 28 }
+		},
+		"head": {
+			"head": { "name": "default/common/head", "x": 27.67, "y": -3.61, "rotation": -90.45, "width": 72, "height": 57 }
+		},
+		"kilt": {
+			"kilt": { "name": "default/blue/kilt", "y": -2.87, "width": 24, "height": 12 }
+		},
+		"leftHand": {
+			"leftHand": { "name": "default/common/hand", "x": -0.14, "y": -0.18, "rotation": 127.5, "width": 10, "height": 8 }
+		},
+		"leftLeg": {
+			"leftLeg": { "name": "default/common/leg", "x": 6.88, "y": -0.76, "rotation": 92.96, "width": 8, "height": 14 }
+		},
+		"leftLowerArm": {
+			"leftLowerArm": { "name": "default/common/leftLowerArm", "x": 4.1, "y": -0.17, "rotation": 106.01, "width": 10, "height": 12 }
+		},
+		"leftUpperArm": {
+			"leftUpperArm": { "name": "default/common/leftUpperArm", "x": 3.91, "y": 0.76, "rotation": 36.33, "width": 14, "height": 12 }
+		},
+		"rightHand": {
+			"rightHand": { "name": "default/common/hand", "x": 0.83, "y": 0.16, "rotation": -78.67, "width": 10, "height": 8 }
+		},
+		"rightLeg": {
+			"rightLeg": { "name": "default/common/leg", "x": 6.48, "y": -0.58, "rotation": 92.97, "width": 8, "height": 14 }
+		},
+		"rightLowerArm": {
+			"rightLowerArm": { "name": "default/common/rightLowerArm", "x": 3.03, "y": -0.44, "rotation": 152.55, "width": 12, "height": 10 }
+		},
+		"rightUpperArm": {
+			"rightUpperArm": { "name": "default/common/rightUpperArm", "x": 5.27, "y": 0.03, "rotation": 107.06, "width": 12, "height": 16 }
+		},
+		"torso": {
+			"torso": { "name": "default/common/torso", "x": 4.84, "y": -0.36, "rotation": -90, "width": 20, "height": 26 }
+		},
+		"weapon": {
+			"weapon": { "name": "default/common/spear", "x": 2.25, "y": -11.54, "rotation": 99.27, "width": 66, "height": 10 }
+		}
+	},
+	"spearwarrior_default_red": {
+		"face1": {
+			"facepaint1": { "name": "default/red/facepaint_left", "x": 7.8, "y": 26.43, "rotation": -90.45, "width": 9, "height": 14 }
+		},
+		"face2": {
+			"facepaint2": { "name": "default/red/facepaint_right", "x": 8.34, "y": -19.86, "rotation": 269.54, "width": 16, "height": 15 }
+		},
+		"hat": {
+			"hat": { "name": "default/red/headband", "x": 45.27, "y": -3.25, "rotation": -90.45, "width": 78, "height": 28 }
+		},
+		"head": {
+			"head": { "name": "default/common/head", "x": 27.67, "y": -3.61, "rotation": -90.45, "width": 72, "height": 57 }
+		},
+		"kilt": {
+			"kilt": { "name": "default/red/kilt", "y": -2.9, "width": 24, "height": 12 }
+		},
+		"leftHand": {
+			"leftHand": { "name": "default/common/hand", "x": -0.14, "y": -0.18, "rotation": 127.5, "width": 10, "height": 8 }
+		},
+		"leftLeg": {
+			"leftLeg": { "name": "default/common/leg", "x": 6.88, "y": -0.76, "rotation": 92.96, "width": 8, "height": 14 }
+		},
+		"leftLowerArm": {
+			"leftLowerArm": { "name": "default/common/leftLowerArm", "x": 4.1, "y": -0.17, "rotation": 106.01, "width": 10, "height": 12 }
+		},
+		"leftUpperArm": {
+			"leftUpperArm": { "name": "default/common/leftUpperArm", "x": 3.91, "y": 0.76, "rotation": 36.33, "width": 14, "height": 12 }
+		},
+		"rightHand": {
+			"rightHand": { "name": "default/common/hand", "x": 0.83, "y": 0.16, "rotation": -78.67, "width": 10, "height": 8 }
+		},
+		"rightLeg": {
+			"rightLeg": { "name": "default/common/leg", "x": 6.48, "y": -0.58, "rotation": 92.97, "width": 8, "height": 14 }
+		},
+		"rightLowerArm": {
+			"rightLowerArm": { "name": "default/common/rightLowerArm", "x": 3.03, "y": -0.44, "rotation": 152.55, "width": 12, "height": 10 }
+		},
+		"rightUpperArm": {
+			"rightUpperArm": { "name": "default/common/rightUpperArm", "x": 5.27, "y": 0.03, "rotation": 107.06, "width": 12, "height": 16 }
+		},
+		"torso": {
+			"torso": { "name": "default/common/torso", "x": 4.84, "y": -0.36, "rotation": -90, "width": 20, "height": 26 }
+		},
+		"weapon": {
+			"weapon": { "name": "default/common/spear", "x": 2.25, "y": -11.54, "rotation": 99.27, "width": 66, "height": 10 }
+		}
+	},
+	"spearwarrior_pirate_blue": {
+		"face1": {
+			"facepaint1": { "name": "pirate/blue/eyepatch", "x": 31.91, "y": -1.98, "rotation": -90.45, "width": 64, "height": 25 }
+		},
+		"hat": {
+			"hat": { "name": "pirate/blue/bandana", "x": 46.81, "y": -1.19, "rotation": -90.45, "width": 67, "height": 19 }
+		},
+		"head": {
+			"head": { "name": "default/common/head", "x": 27.67, "y": -3.61, "rotation": -90.45, "width": 72, "height": 57 }
+		},
+		"kilt": {
+			"kilt": { "name": "default/blue/kilt", "y": -2.87, "width": 24, "height": 12 }
+		},
+		"leftHand": {
+			"leftHand": { "name": "default/common/hand", "x": -0.14, "y": -0.18, "rotation": 127.5, "width": 10, "height": 8 }
+		},
+		"leftLeg": {
+			"leftLeg": { "name": "default/common/leg", "x": 6.88, "y": -0.76, "rotation": 92.96, "width": 8, "height": 14 }
+		},
+		"leftLowerArm": {
+			"leftLowerArm": { "name": "default/common/leftLowerArm", "x": 4.1, "y": -0.17, "rotation": 106.01, "width": 10, "height": 12 }
+		},
+		"leftUpperArm": {
+			"leftUpperArm": { "name": "default/common/leftUpperArm", "x": 3.91, "y": 0.76, "rotation": 36.33, "width": 14, "height": 12 }
+		},
+		"rightHand": {
+			"rightHand": { "name": "default/common/hand", "x": 0.83, "y": 0.16, "rotation": -78.67, "width": 10, "height": 8 }
+		},
+		"rightLeg": {
+			"rightLeg": { "name": "default/common/leg", "x": 6.48, "y": -0.58, "rotation": 92.97, "width": 8, "height": 14 }
+		},
+		"rightLowerArm": {
+			"rightLowerArm": { "name": "default/common/rightLowerArm", "x": 3.03, "y": -0.44, "rotation": 152.55, "width": 12, "height": 10 }
+		},
+		"rightUpperArm": {
+			"rightUpperArm": { "name": "default/common/rightUpperArm", "x": 5.27, "y": 0.03, "rotation": 107.06, "width": 12, "height": 16 }
+		},
+		"torso": {
+			"torso": { "name": "default/common/torso", "x": 4.84, "y": -0.36, "rotation": -90, "width": 20, "height": 26 }
+		},
+		"weapon": {
+			"weapon": { "name": "default/common/spear", "x": 2.25, "y": -11.54, "rotation": 99.27, "width": 66, "height": 10 }
+		}
+	}
+},
+"animations": {
+	"Idle": {
+		"bones": {
+			"Head": {
+				"rotate": [
+					{ "time": 0, "angle": -1.65 },
+					{ "time": 0.5333, "angle": 3.6 },
+					{ "time": 1, "angle": -1.65 }
+				],
+				"translate": [
+					{
+						"time": 0,
+						"x": 0,
+						"y": 0,
+						"curve": [ 0.25, 1, 0.316, 1 ]
+					},
+					{
+						"time": 0.3333,
+						"x": -3.62,
+						"y": 0,
+						"curve": [ 0.525, 0, 0.75, 1 ]
+					},
+					{ "time": 1, "x": 0, "y": 0 }
+				]
+			},
+			"R_Elbow": {
+				"rotate": [
+					{ "time": 0, "angle": -15.7 },
+					{ "time": 0.5, "angle": -38.49 },
+					{ "time": 1, "angle": -15.7 }
+				]
+			},
+			"rightShoulder": {
+				"rotate": [
+					{ "time": 0, "angle": -6.75 },
+					{ "time": 0.5, "angle": -336.18 },
+					{ "time": 1, "angle": -6.75 }
+				]
+			},
+			"R_Hand": {
+				"rotate": [
+					{ "time": 0, "angle": 16.57 },
+					{ "time": 0.5, "angle": 15.62 },
+					{ "time": 1, "angle": 16.57 }
+				]
+			},
+			"leftShoulder": {
+				"rotate": [
+					{ "time": 0, "angle": -23.54 },
+					{ "time": 0.5, "angle": 1.25 },
+					{ "time": 1, "angle": -23.54 }
+				]
+			},
+			"leftHand": {
+				"rotate": [
+					{ "time": 0, "angle": 0 },
+					{ "time": 0.5, "angle": -24.89 },
+					{ "time": 1, "angle": 0 }
+				]
+			},
+			"leftElbow": {
+				"rotate": [
+					{ "time": 0, "angle": 18.18 },
+					{ "time": 0.5, "angle": 16.72 },
+					{ "time": 1, "angle": 18.18 }
+				]
+			},
+			"Spine": {
+				"translate": [
+					{ "time": 0, "x": 0, "y": 0 },
+					{ "time": 0.3333, "x": 0, "y": 1.31 },
+					{ "time": 1, "x": 0, "y": 0 }
+				]
+			},
+			"Kilt": {
+				"translate": [
+					{ "time": 0, "x": 0, "y": 0 },
+					{ "time": 0.6666, "x": 1.73, "y": -0.01 },
+					{ "time": 1, "x": 0, "y": 0 }
+				]
+			}
+		}
+	},
+	"Walk": {}
+}
+}

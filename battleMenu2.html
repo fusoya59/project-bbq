@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />-->
+<title>Project BBQ</title>
+<link href="ui.css" rel="stylesheet" type="text/css" />
+<link href="battleMenu.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="noSelect noDrag">
+<div class="mainWindow mainBgColour">
+	<div class="header">
+        <div class="headerButtonLeft">
+	    	<a id="battle_backButton" href="mainMenu2.html">
+        		<div class="headerButtonBackImage buttonSprite_hover_active"></div>
+    	    </a>
+        </div>
+        <div class="headerTitle">
+        	<h1>Tribe Battles</h1>
+        </div>
+        <div class="headerButtonRight">
+    		<a id='battlematch' href="#"><div class="headerButtonDoneImage buttonSprite_hover_active"></div></a>
+        </div>
+    </div>
+    <div class="content scrollY skinnedScrollbar">
+        <div class="sectionHeaderBg">
+            <div class="sectionHeader">
+                Current Battles
+            </div>
+        </div>
+        <div id="currentBattles" class="section">
+            <div class="btnBattle btnBattleMargin">
+                <div class="btnBattleChiefImage iconPlaceholder"></div>
+                <div class="btnBattleBg btnBattleYourTurnImage">
+                	<div class="btnBattleContent">
+                    	<div class="btnBattleUsername" style="text-align:right">SuppaDuppaX</div>     
+                        <div class="btnBattleMap">You've $winlose! Click to collect.</div>                            
+                    </div>
+                </div>
+			</div>            
+            <div class="btnBattle btnBattleMargin">
+                <div class="btnBattleChiefImage iconPlaceholder"></div>
+                <div class="btnBattleBg btnBattleYourTurnImage">
+                	<div class="btnBattleContent">
+                    	<div class="btnBattleUsername">SuppaDuppaX</div>     
+                        <div class="btnBattleMap">has challenged you!</div>    
+                        <div style="margin-top:35px">
+                            <div class="btnAccept" style="margin-left:5px" ></div>                    
+                            <div class="btnDecline" ></div>                    
+                        </div>               
+                    </div>
+                </div>
+			</div>
+            <div class="btnBattle btnBattleMargin">
+                <div class="btnBattleChiefImage iconPlaceholder"></div>
+                <div class="btnBattleBg btnBattleWaitingImage">
+                	<div class="btnBattleContent">
+                        <div class="btnBattleMap">Challenging</div>
+                    	<div class="btnBattleUsername" style="text-align:right">SuppaDuppaX</div>
+                        <div class="btnBattleMap">Awaiting reply</div>
+                    </div>
+                </div>
+			</div>
+
+            <div class="btnBattle btnBattleMargin">
+                <div class="btnBattleChiefImage iconPlaceholder"></div>
+                <div class="btnBattleBg btnBattleYourTurnImage">
+                	<div class="btnBattleContent">
+                    	<div class="btnBattleUsername">Finding match...</div>                        
+                    </div>
+                </div>
+			</div>
+           	<div class="btnBattle btnBattleMargin">
+                <div class="btnBattleChiefImage iconPlaceholder"></div>
+                <div class="btnBattleBg btnBattleYourTurnImage">
+                	<div class="btnBattleContent">
+                    	<div class="btnBattleUsername">SuppaDuppaX</div>
+                        <div class="btnBattleMap">Winding Woods</div>
+                        <div class="btnBattleTurn">Your turn</div>
+                    </div>
+                </div>
+			</div>
+           	<div class="btnBattle btnBattleMargin">
+                <div class="btnBattleChiefImage iconPlaceholder"></div>
+                <div class="btnBattleBg btnBattleWaitingImage">
+                	<div class="btnBattleContent">
+                    	<div class="btnBattleUsername">SuppaDuppaX</div>
+                        <div class="btnBattleMap">Winding Woods</div>
+                        <div class="btnBattleTurn">Waiting...</div>
+                    </div>
+                </div>
+			</div>
+            <div class="btnBattle btnBattleMargin">
+                <div class="btnBattleChiefImage iconPlaceholder"></div>
+                <div class="btnBattleBg btnBattleWaitingImage">
+                	<div class="btnBattleContent">
+                    	<div class="btnBattleUsername">SuppaDuppaX</div>
+                        <div class="btnBattleMap">Winding Woods</div>
+                        <div class="btnBattleTurn">Waiting...</div>
+                    </div>
+                </div>
+			</div>
+            <div class="btnBattle btnBattleMargin">
+                <div class="btnBattleChiefImage iconPlaceholder"></div>
+                <div class="btnBattleBg btnBattleWaitingImage">
+                	<div class="btnBattleContent">
+                    	<div class="btnBattleUsername">SuppaDuppaX</div>
+                        <div class="btnBattleMap">Winding Woods</div>
+                        <div class="btnBattleTurn">Waiting...</div>
+                    </div>
+                </div>
+			</div>
+        </div>
+        <div class="sectionHeaderBg">
+            <div class="sectionHeader">
+                Finished Battles
+            </div>
+        </div>
+        <div id="finishedBattles" class="section">
+           	<div class="btnBattle btnBattleMargin">
+                <div class="btnBattleChiefImage iconPlaceholder"></div>
+                <div class="btnBattleBg btnBattleFinishedImage">
+                	<div class="btnBattleContent">
+                    	<div class="btnBattleUsername">SuppaDuppaX</div>
+                        <div class="btnBattleMap">Winding Woods</div>
+                        <div class="btnBattleResult btnBattleVictory"></div>
+                    </div>
+                </div>
+			</div>  
+           	<div class="btnBattle btnBattleMargin">
+                <div class="btnBattleChiefImage iconPlaceholder"></div>
+                <div class="btnBattleBg btnBattleFinishedImage">
+                	<div class="btnBattleContent">
+                    	<div class="btnBattleUsername">SuppaDuppaX</div>
+                        <div class="btnBattleMap">Winding Woods</div>
+                        <div class="btnBattleResult btnBattleDefeat"></div>
+                    </div>
+                </div>
+			</div>  
+		</div>  
+    </div>
+    <div id="footer" class="footer"></div>    
+</div>
+
+<div id="" class="fadeBlack hidden"></div>
+
+<div id="purchaseWindow" class="windowUniversal hidden"></div>
+
+</body>
+<script type="text/javascript">
+    bbq.frontend.setupBattleMenu();
+</script>
+</html>

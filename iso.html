@@ -1,0 +1,231 @@
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <script type="text/javascript" src="core/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="core/constants.js"></script>
+        <script type="text/javascript" src="core/entitysystem.js"></script>
+        <script type="text/javascript" src="core/components.js"></script>        
+        <script type="text/javascript" src="core/systems.js"></script>
+        <script type="text/javascript" src="core/utils.js"></script>
+        <script type="text/javascript" src="core/resources.js"></script>
+        <script type="text/javascript" src="core/iso.js"></script>
+        <script type="text/javascript">
+            /**
+            * request animation frame convenience
+            * http://paulirish.com/2011/requestanimationframe-for-smart-animating/
+            */
+            window.requestAnimFrame = (function () {
+                return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
+                function (callback) {
+                    var timeFrame = 1000 / 60;
+                    window.setTimeout(function () { callback(+new Date); }, timeFrame);
+                };
+            })();
+
+            var ZINDEX = {
+                map: 0,
+                unit : 3,
+                building: 2,
+                prop: 1,
+                cursor : 5
+            };
+        </script>
+        <title>Iso test</title>
+    </head>
+    <body>
+        <canvas id="mycanvas" width="400" height="300"></canvas>
+        <script type="text/javascript">            
+            var em = boc.core.Entity_internal.em();            
+            var canvas = $('#mycanvas')[0];
+            var map = null;
+            var cursor = null;
+
+            boc.resources.GraphicsManager.loadFiles(
+                [
+                    'forestTiles_iso.png',
+                    'cursor_iso.png',
+                    'hq_blue.png',
+                    'hut_blue.png',
+                    'hut_neutral.png'
+                ],
+                function() {
+                    var tileFactory = new boc.iso.TileFactory({ entityManager : em });
+                    var isoMap = new boc.iso.Map({
+                        tileWidth : 72,
+                        tileHeight : 35,
+                        numColumns : 10,
+                        numRows : 10,
+                        terrainString: 'gggggggggg|gggggdddgg|ggdgddggdg|gggdggdgdg|ggggddddgg|ggggdggggg|gggggggggg|gggdddgggg|ggggddgggg|gggggggggg',
+                        propString : null,
+                        tileset : 'forest',
+                        tileFactory: tileFactory,
+                        entityManager : em
+                    });
+                    panningCameraSystem.bounds(isoMap.bounds());
+                    map = isoMap;
+
+                    var grayhut = new boc.core.Entity({ description: 'grayhut' });
+                    grayhut.addComponent(
+                       new boc.components.DrawableSprite({
+                           image: boc.resources.GraphicsManager.getImage('hut_neutral.png')
+                       })
+                    );
+                    grayhut.addComponent(
+                        new boc.components.Spatial({
+                            x: 35,
+                            y: 72,
+                            z: ZINDEX.map + ZINDEX.building,
+                            width: 72,
+                            height: 70
+                        })
+                    );
+                    grayhut.addComponent(new boc.components.IsoZ(ZINDEX.map + ZINDEX.building));
+                    grayhut.addComponent(new boc.components.Selectable());
+                    grayhut.addComponent(new boc.components.Highlightable());
+                    grayhut.addComponent(new boc.components.IsoMapCoordinate({ x: 0, y: 1 }))
+                    map.placeEntityOnTile(grayhut, 0, 1, { y: -grayhut.Spatial.height / 2, x: 2 });
+
+                    var bluehut = new boc.core.Entity({ description: 'bluehut' });
+                    bluehut.addComponent(
+                       new boc.components.DrawableSprite({
+                           image: boc.resources.GraphicsManager.getImage('hut_blue.png')
+                       })
+                    );
+                    bluehut.addComponent(
+                        new boc.components.Spatial({
+                            x: 35,
+                            y: 72,
+                            z: ZINDEX.map + ZINDEX.building,
+                            width: 72,
+                            height: 70
+                        })
+                    );
+                    bluehut.addComponent(new boc.components.IsoZ(ZINDEX.map + ZINDEX.building));
+                    bluehut.addComponent(new boc.components.Selectable());
+                    bluehut.addComponent(new boc.components.Highlightable());
+                    bluehut.addComponent(new boc.components.IsoMapCoordinate({ x: 1, y: 0 }))
+                    map.placeEntityOnTile(bluehut, bluehut.IsoMapCoordinate.x, bluehut.IsoMapCoordinate.y, { y: -bluehut.Spatial.height / 2, x: 2 });
+
+                    var hq = new boc.core.Entity({ description: 'hq' });
+                    hq.addComponent(
+                       new boc.components.DrawableSprite({
+                           image: boc.resources.GraphicsManager.getImage('hq_blue.png')
+                       })
+                    );
+                    hq.addComponent(
+                        new boc.components.Spatial({
+                            x: 35,
+                            y: 72,
+                            z: ZINDEX.map + ZINDEX.building,
+                            width: 72,
+                            height: 70
+                        })
+                    );
+                    hq.addComponent(new boc.components.IsoZ(ZINDEX.map + ZINDEX.building));
+                    hq.addComponent(new boc.components.Selectable());
+                    hq.addComponent(new boc.components.Highlightable());
+                    hq.addComponent(new boc.components.IsoMapCoordinate({ x: 1, y:1}))
+                    map.placeEntityOnTile(hq, 1, 1, { y: -hq.Spatial.height / 2, x: 2 });
+
+                   
+
+                    cursor = new boc.core.Entity({ description: 'cursor' });
+                    cursor.addComponent(
+                        new boc.components.DrawableSprite({
+                            image: boc.resources.GraphicsManager.getImage('cursor_iso.png')
+                        })
+                    );
+                    cursor.addComponent(
+                        new boc.components.Spatial({
+                            x: 0,
+                            y: 0,
+                            z: ZINDEX.map - 1,
+                            width: 73,
+                            height : 40
+                        })
+                    );
+                    cursor.addComponent(new boc.components.IsoZ(ZINDEX.map + ZINDEX.cursor));
+                    cursor.addComponent(new boc.components.Cursor({ location: {x:0, y:0} }));                    
+                    map.placeEntityOnTile(cursor, cursor.Cursor.location.x, cursor.Cursor.location.y, { x: -1, y: -1 });
+
+                    isoZSystem = new boc.systems.IsoZOrderSystem(em, map);
+                    
+                } // onload
+            );
+
+            var renderSystem = new boc.systems.RenderSystem(em, canvas);
+            renderSystem.camera(
+                new boc.utils.Camera({
+                    xmin: 0,
+                    xmax: canvas.width,
+                    ymin: 0,
+                    ymax : canvas.height
+                })
+            );
+            
+            var mouseInputSystem = new boc.systems.MouseInputSystem(em, canvas);
+            var lifespanSystem = new boc.systems.LifespanSystem(em);
+            var panningCameraSystem = new boc.systems.PanningCameraSystem(em, renderSystem.camera());
+            var isoZSystem = null;
+            var lifespanSystem = new boc.systems.LifespanSystem(em);
+            var cursorSystem = new boc.systems.IsoCursorSystem(em);
+            var highlightSystem = new boc.systems.HightlightSystem(em);
+
+            var lastFrame = 0;
+            var stop = false;
+            function loop(now) {
+                if (stop) { return; }
+                requestAnimFrame(loop);
+                var frameTime = now - lastFrame;
+                mouseInputSystem.processTick(frameTime);
+                panningCameraSystem.processTick(frameTime);
+                if (isoZSystem) { isoZSystem.processTick(frameTime); }
+                renderSystem.processTick(frameTime);
+                cursorSystem.processTick(frameTime);
+                highlightSystem.processTick(frameTime);
+                lifespanSystem.processTick(frameTime);
+                lastFrame = now;
+            } // loop
+            loop(lastFrame);                   
+
+            $(document).keydown(function (event) {
+                var oldloc = { x: cursor.Cursor.location.x, y: cursor.Cursor.location.y };
+                switch (event.keyCode) {
+                    case 65:
+                    case 37: // left                        
+                        cursor.Cursor.location.x--;
+                        if (cursor.Cursor.location.x < 0) { cursor.Cursor.location.x = 0; }
+                        map.placeEntityOnTile(cursor, cursor.Cursor.location.x, cursor.Cursor.location.y, { x: -1, y: -1 });
+                        break;
+                    case 68:
+                    case 39: // right
+                        cursor.Cursor.location.x++;
+                        if (cursor.Cursor.location.x >= map.numColumns()) { cursor.Cursor.location.x = map.numColumns() - 1; }
+                        map.placeEntityOnTile(cursor, cursor.Cursor.location.x, cursor.Cursor.location.y, { x: -1, y: -1 });
+                        break;
+                    case 87:
+                    case 38: // up                        
+                        cursor.Cursor.location.y--;
+                        if (cursor.Cursor.location.y < 0) { cursor.Cursor.location.y = 0; }
+                        map.placeEntityOnTile(cursor, cursor.Cursor.location.x, cursor.Cursor.location.y, { x: -1, y: -1 });
+                        break;
+                    case 83:
+                    case 40: // down
+                        cursor.Cursor.location.y++;
+                        if (cursor.Cursor.location.y >= map.numRows()) { cursor.Cursor.location.y = map.numRows() - 1; }
+                        map.placeEntityOnTile(cursor, cursor.Cursor.location.x, cursor.Cursor.location.y, { x: -1, y: -1 });
+                        break;
+                }
+                var newloc = { x: cursor.Cursor.location.x, y: cursor.Cursor.location.y };
+                boc.utils.createEvent(
+                    new boc.components.CursorEvent({
+                        target: cursor.id(),
+                        oldLocation: oldloc,
+                        newLocation: newloc
+                    }),
+                    em
+                );
+            });
+        </script>
+    </body>
+</html>
