@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title></title>
+    <script type="text/javascript" src="libs/core/namespace.js"></script>
+    <script type="text/javascript" src="include/bbq.js"></script>
+    <script type="text/javascript" src="include/config.js"></script>
+    <script type="text/javascript" src="include/core.js"></script>
+    <script type="text/javascript" src="libs/core/GameEngine.js"></script>
+    <script type="text/javascript">
+        ///**
+        //* request animation frame convenience
+        //* http://paulirish.com/2011/requestanimationframe-for-smart-animating/
+        //*/
+        //window.requestAnimFrame = (function () {
+        //    return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
+        //    function (callback) {
+        //        var timeFrame = 1000 / 60;
+        //        window.setTimeout(function () { callback(+new Date); }, timeFrame);
+        //    };
+        //})();
+
+        var scripts = include.config.concat(include.core).concat(include.bbq_deferred).concat(['assets/graphics/graphics.js']).concat(include.bbq);
+        var map, engine;
+        function onReady() {         
+            map = new bbq.Map('riverbends', $em(), {
+                'padding-left': 100,
+                'padding-right': 100,
+                'padding-top': 100,
+                'padding-bottom': 100
+            });
+            var camera = new boc.utils.Camera({ xmin: -100, ymin: -100, xmax: map.width() + 200, ymax: map.height() + 200});
+            //var renderSystem = new boc.systems.RenderSystem($em(), $('#map')[0], camera);
+            //renderSystem.processTick(10);         
+
+            
+            //var terrainCanvas = $('<canvas>')[0];
+            //terrainCanvas.height = map.height();
+            //terrainCanvas.width = map.width();
+            //var terrainContext = terrainCanvas.getContext('2d');
+
+
+            //var waterContexts = [];
+            //var waterCanvases = [];
+            //for (var w in bbq.tilesets.forest.water.offsets) {
+            //    var waterCanvas = $('<canvas>')[0];
+            //    waterCanvas.height = map.height();
+            //    waterCanvas.width = map.width();
+            //    waterCanvases.push(waterCanvas);
+            //    var waterContext = waterCanvas.getContext('2d');
+            //    waterContexts.push(waterContext);
+            //    //$(document.body).append(waterCanvas);
+            //}            
+
+            //var zOrderedEntities = $em('Terrain').all().concat($em('Prop').all()).concat($em('Fringe').all());
+            
+            //zOrderedEntities.sort(function (a, b) {
+            //    var spatialA = $em(a).comp('Spatial');
+            //    var spatialB = $em(b).comp('Spatial');
+            //    return (spatialA.z - spatialB.z);
+            //});
+
+            //for (var i = 0; i < zOrderedEntities.length; i++) {
+            //    var terrainComponent = $em(zOrderedEntities[i]).comp('Terrain'),
+            //        drawableComponent = $em(zOrderedEntities[i]).comp('DrawableSprite'),
+            //        spatialComponent = $em(zOrderedEntities[i]).comp('Spatial');
+
+            //    var contextArr;
+
+            //    if (terrainComponent && terrainComponent.type == 'water') {
+            //        contextArr = waterContexts;
+            //    }
+            //    else {
+            //        contextArr = [terrainContext];
+            //    }
+
+            //    for (var j = 0; j < contextArr.length; j++) {
+            //        var context = contextArr[j];
+            //        context.save();
+            //        context.globalAlpha = drawableComponent.alpha;
+
+            //        // i can make some safe assumptions. the context array length == water animation length
+            //        var sanim = $em(zOrderedEntities[i]).comp('SpriteAnimation');
+            //        if (sanim) {
+            //            drawableComponent = sanim.sprites[j];
+            //        }
+
+            //        if (!drawableComponent.clipRect) {
+            //            try {
+            //                context.drawImage(drawableComponent.image,
+            //                    spatialComponent.x,
+            //                    spatialComponent.y,
+            //                    spatialComponent.width,
+            //                    spatialComponent.height
+            //                );
+            //            } catch (err) {
+            //                console.log(zOrderedEntitiesPayload[k], ' image bad');
+            //            }
+            //        }
+            //        else {
+            //            context.drawImage(drawableComponent.image,
+            //                drawableComponent.clipRect.x,
+            //                drawableComponent.clipRect.y,
+            //                drawableComponent.clipRect.width,
+            //                drawableComponent.clipRect.height,
+            //                spatialComponent.x,
+            //                spatialComponent.y,
+            //                spatialComponent.width,
+            //                spatialComponent.height
+            //            );
+            //        }
+            //        context.restore();
+            //    }
+            //} // for i
+
+            //var terrainImg = new Image();
+            //terrainImg.width = map.width();
+            //terrainImg.height = map.width();
+            //terrainImg.src = terrainCanvas.toDataURL();
+            //boc.resources.GraphicsManager.addImage(map.id() + '_terrain', terrainImg);
+            
+            //var waterSprites = [];
+            //for (var i = 0; i < waterContexts.length; i++) {
+            //    var waterImg = new Image();
+            //    waterImg.width = map.width();
+            //    waterImg.height = map.width();
+            //    waterImg.src = waterCanvases[i].toDataURL();
+            //    var sprite = new boc.components.DrawableSprite({ image: waterImg });
+            //    sprite.tag = 'water' + i;
+            //    waterSprites.push(sprite);
+            //    boc.resources.GraphicsManager.addImage(map.id() + '_water' + i, waterImg);
+            //}
+
+            //$em().clear();
+
+            //var waterEnt = $em.create(map.id() + '_water');
+            //$em(waterEnt)
+            //    .add(new boc.components.Spatial({ x: 0, y : 0, width : map.width(), height : map.height() }))
+            //    .add(new boc.components.DrawableSprite({ image: boc.resources.GraphicsManager.getImage(map.id() + '_water0'), visible: true }));            
+            
+            //var anim = new boc.utils.SpriteAnimationSequence({
+            //    entity: waterEnt,
+            //    entityManager: $em(),
+            //    loop: true,
+            //    animations: [
+            //        new boc.components.SpriteAnimation({
+            //            duration: 2000,
+            //            easing: 'linear',
+            //            sprites: waterSprites
+            //        }) // Spriteanimation
+            //    ] // animations
+            //}); // SpriteaniamtionSequence
+            //anim.start();
+
+            //var terrainEnt = $em.create(map.id() + '_terrain');
+            //$em(terrainEnt)
+            //    .add(new boc.components.Spatial({ x: 0, y: 0, width: map.width(), height: map.height() }))
+            //    .add(new boc.components.DrawableSprite({ image: boc.resources.GraphicsManager.getImage(map.id() + '_terrain'), visible: true }));
+
+            // test below this comment
+            var mainCanvas = $('#map')[0];
+            mainCanvas.width = map.width() + 200;
+            mainCanvas.height = map.height() + 200;
+
+            var renderSystem = new boc.systems.RenderSystem($em(), mainCanvas, camera);
+            var animSystem = new boc.systems.SpriteAnimationSystem($em());
+            //var lastFrame = window.navigator.userAgent.toLowerCase().indexOf('firefox') >= 0 ? +new Date : 0;
+
+            engine = new boc.core.GameEngine([animSystem, renderSystem]);
+            engine.start();
+
+            //function loop(now) {
+            //    requestAnimFrame(loop);
+            //    var frameTime = now - lastFrame;
+            //    renderSystem.processTick(frameTime);
+            //    animSystem.processTick(frameTime);
+            //    lastFrame = now;
+            //} // loop
+
+            //loop(lastFrame);
+
+        } // onReady
+        loadScripts(scripts, function () {
+            boc.resources.GraphicsManager.loadFiles(['assets/graphics/forestTiles.png'], function () {
+                boc.resources.GraphicsManager.load(bbq.assets.graphics, onReady);
+            });
+            
+        });
+    </script>
+</head>
+<body>
+    <canvas id="map" width="960" height="784"></canvas>    
+</body>
+</html>

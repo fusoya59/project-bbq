@@ -1,0 +1,331 @@
+@charset "utf-8";
+/* CSS Document */
+.hudStatContainer {
+	position: relative;
+	display: inline-block;
+}
+
+.hudStat {
+	//position: absolute;
+	display: table;
+	width: 128px;
+	height: 48px;
+	background-color: #4f5b6c;
+	border-radius: 10px;
+	border: 1px solid #fff;
+	box-shadow: -2px 2px 5px #000;
+}
+
+.hudStatSmall {
+	width: 108px;
+}
+
+.hudStat > img {
+	position: absolute;
+	left: 5px;
+}
+
+.hudStat > img.food {
+	margin-left: 5px;
+	margin-top: 3px;
+	content: URL("images/iconFood.png");
+	
+} .hudStat > img.health {
+	margin-top: 5px;
+	content: URL("images/iconHealth.png");
+	
+} .hudStat > img.attack {
+	margin-top: 6px;
+	content: URL("images/iconAttack.png");
+	
+} .hudStat > img.range {
+	margin-top: 6px;
+	content: URL("images/iconRange.png");
+	
+} .hudStat > img.movement {
+	margin-top: 8px;
+	content: URL("images/iconMovement.png");
+	
+} .hudStat > img.vision {
+	margin-top: 5px;
+	content: URL("images/iconVision.png");
+	
+}
+
+.hudStatMargin {
+	//margin-left: 2px;
+	margin-right: 2px;
+}
+
+.hudStatUnitName {
+	display: inline-block;
+	position: relative;
+	margin-bottom: 5px;
+	box-shadow: -2px 2px 5px #000;
+	height: 36px;
+}
+
+.boxShadow {
+	box-shadow: -2px 2px 5px #000;
+}
+
+.boxShadowLarge {
+	box-shadow: -3px 3px 7px #000;
+}
+
+.hudStatPadding {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.hudStat > span {
+	width: 78px;
+	text-align: right;
+	position: absolute;
+	top: 0px;
+	right: 10px;
+	font-size: 46px;
+	color: #fff;
+	font-family: "bebas_neueregular";
+}
+
+.hudButtons {
+	position: absolute;
+	display: inline-block;
+	top: 15px;
+	right: 15px;
+}
+
+.hudButtonMargin {
+	margin-left: 10px;
+}
+
+.pauseFlood {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+	display: table;
+}
+
+.pauseVAlign {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.pauseMenuContainer {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	display: inline-block;
+}
+
+.pauseMenu {
+	margin: 0px auto;
+	position: relative;
+	display: inline-block;
+	width: 258px;
+	background-color: #333b47;
+	border: 1px solid #fff;
+	border-radius: 10px;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	text-align: center;
+}
+
+.btnPauseMenu {
+	display: table;
+	height: 48px;
+	width: 198px;
+} .btnPauseMenu > .content {
+	display: table-cell;
+} .btnPauseMenu > span.labelLarge {
+	font-family: "MolotRegular";
+	font-size: 20px;
+	color: #fff;
+}
+
+.pauseMenuButtonMargin {
+	margin: 5px;
+}
+
+.summaryWindowContainer {
+	position: absolute;
+	transition: .5s ease-in-out;
+}
+
+.summaryWindow {
+	//margin: 0px auto;
+	position: absolute;
+	//height: 200px;
+	display: inline-block;
+	width: 500px;
+	height: 295px;
+	background-color: #333b47;
+	border: 1px solid #fff;
+	border-radius: 10px;
+	//padding-top: 10px;
+	padding-bottom: 10px;	
+}
+
+.summaryWindow > .header {
+	height: 50px;
+	width: 100%;
+	border-bottom: 1px solid #fff;
+	font-family: "MolotRegular";
+	font-size: 25px;
+	background-color: #455b6d;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	color: #fff;
+} .summaryWindow > .header > .title {
+	display: inline-block;
+	margin-top: 10px;
+} .summaryWindow > .body {
+	color: #fff;
+} .summaryWindow > .body > .stat {
+	margin-top: 5px;
+	margin-bottom: 5px;
+} .summaryWindow > .body > .stat > .name {
+	font-family: "bebas_neueregular";
+	font-size: 20px;
+	width: 24%;
+	display: inline-block;
+	padding-top: 5px;
+	text-align: left;
+} .summaryWindow > .body > .stat > .stat1, .summaryWindow > .body > .stat > .stat2 {
+	font-family: "MolotRegular";
+	font-size: 15px;
+	width: 33%;
+	height: 35px;
+	display: inline-block;
+	background-color: #455b6d;
+	padding-top: 5px;
+} .summaryWindow > .body > .stat > .stat1 > .value, .summaryWindow > .body > .stat > .stat2 > .value {
+	margin: 5px;
+	font-size: 24px;
+} .summaryWindow > .body > .stat > .stat1 > .value, .summaryWindow > .body > .stat > .stat2 > .value {
+	margin: 5px;
+}
+
+.reward {
+	display: table;
+	position: relative;
+	width: 100%;
+	height: 68px;
+	border-top: 1px solid #fff;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	background-color: #2f884a;
+	font-family: "MolotRegular";
+	font-size: 25px;
+}
+
+.reward > .valueBg > .badge {
+	content: url("images/icon_battleBadge_medium.png");
+	position: absolute;
+	left: 5px;
+	top: 5px;
+}
+
+.reward > div {
+	display: inline-block;
+}
+
+.reward > .label {
+	position: absolute;
+	left: 15px;
+	top: 20px;
+}
+
+.reward > .valueBg {
+	position: absolute;
+	top: 7px;
+	left: 150px;
+	display: inline-block;
+	width: 153px;
+	height: 50px;
+	background-color: #4f5b6c;
+	border-radius: 10px;
+	border: 1px solid #fff;
+}
+
+.reward > .valueBg > .value {
+	position: absolute;
+	left: 50px;
+	top: 3px;
+	width: 90px;
+	font-size: 36px;
+}
+
+.reward > .collectButton {
+	position: absolute;
+	display: inline-block;
+	right: 35px;
+	top: 7px;
+}
+
+.unitStatsContainer {
+	height: 0px
+	position: absolute;
+	bottom: 0px;
+	left: 15px;
+	overflow: hidden;
+}
+
+.unitStats {
+	position: absolute;
+	height: 0px;
+	//margin: 15px;
+	bottom: -150px;
+	left: 15px;
+	//text-align: center;
+	display: inline-block;
+	transition: 0.25s;
+}
+
+.unitStatsShow {
+	bottom: 110px
+}
+
+.unitStatsHide {
+	bottom: -150px;
+}
+
+.hudFood {
+	position: absolute;
+	left: 15px;
+	top: 15px;
+}
+
+#trainWindow {
+	display: none;
+}
+/*
+#pendingGames {
+	position:absolute;
+	display: inline-block;
+	bottom: 0px;
+}
+*/
+
+span.endTurn {
+	font-family: "bebas_neueregular";
+	font-size: 20px;
+	color: #fff;
+}
+
+.btnEndTurnPosition {
+	position: absolute;
+	top: 0px;
+	right: 60px;
+}
+
+.btnPausePosition {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}

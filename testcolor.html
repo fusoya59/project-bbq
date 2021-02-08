@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+<style type="text/css">
+.test {
+	position: relative;
+	width: 200px;
+	height: 200px;
+	background: url(ui/images/squares.jpg);
+}
+
+.test:before {  
+    content: "";  
+    display: block;  
+    position: absolute;  
+    top: 0;  
+    bottom: 0;  
+    left: 0;  
+    right: 0;  
+    background: rgba(56, 192, 216, 0.5);  
+}  
+
+span {
+	color: white;
+}
+</style>
+<body>
+<div class="test">
+<span>label</span>
+</div>
+</body>
+</html>

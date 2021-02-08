@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <title>Project BBQ</title>
+        <style type="text/css">
+            .sceneContainer
+            {
+	            background-color: #373737;
+	            height: 640px;
+	            width: 960px;
+	            position:relative;
+	            overflow:hidden;
+            }
+
+            .scene
+            {
+	            width:960px;
+	            height:640px;
+	            position:absolute;
+            }
+        </style>
+        <link href="ui/ui.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>
+        <script type="text/javascript" src="libs/core/namespace.js"></script>
+        <script type="text/javascript" src="libs/core/Barrett.js"></script>
+        <script type="text/javascript" src="libs/core/BigInt.js"></script>
+        <script type="text/javascript" src="libs/core/RSA.js"></script>
+        <script type="text/javascript" src="libs/core/priority_queue.js"></script>
+        <script type="text/javascript" src="libs/core/seedrandom.js"></script>
+        <script type="text/javascript" src="libs/core/jquery-1.9.1.min.js"></script>
+        <!--<script type="text/javascript" src="libs/core/modules.js"></script>-->
+        <script type="text/javascript" src="libs/core/socket.io-client-min.js"></script>
+        <script type="text/javascript" src="libs/core/constants.js"></script>
+        <script type="text/javascript" src="libs/core/resources.js"></script>
+        <script type="text/javascript" src="libs/core/entitysystem.js"></script>
+        <script type="text/javascript" src="libs/core/components.js"></script>
+        <script type="text/javascript" src="libs/core/easing.js"></script>
+        <script type="text/javascript" src="libs/core/pfx.js"></script>
+        <script type="text/javascript" src="libs/core/systems.js"></script>        
+        <script type="text/javascript" src="libs/core/utils.js"></script>
+        <script type="text/javascript" src="libs/core/spine.js"></script>        
+        <script type="text/javascript" src="libs/core/bocSpine.js"></script>
+        <script type="text/javascript" src="libs/bbq/uicache.js"></script>
+        <script type="text/javascript" src="libs/bbq/director.js"></script>
+        <script type="text/javascript" src="libs/bbq/scenes.js"></script>
+        <script type="text/javascript" src="libs/bbq/session.js"></script>
+        <script type="text/javascript" src="libs/bbq/user.js"></script>
+        <script type="text/javascript" src="libs/bbq/frontend.js"></script>
+        <script type="text/javascript" src="libs/bbq/hud.js"></script>
+        <script type="text/javascript" src="libs/bbq/turnClient.js"></script>
+        <script type="text/javascript" src="config/units.js"></script>
+
+        <script type="text/javascript">
+            var RECAPTCHA_KEY = '6LckmuMSAAAAADLg6hMl0l58dc9-IWPC_uk30iqy';
+            if (window.location.origin.indexOf('http://localhost') == 0) {
+                boc.constants.API_HOST = 'http://localhost:3000';
+            } else {
+                boc.constants.API_HOST = 'http://toptribe.cfapps.io';
+            }
+            //boc.constants.API_HOST = 'http://toptribe.mooo.com:3000';
+            boc.utils.requestApiKey();
+        </script>
+    </head>
+    <body>
+        <div id="sceneContainer" class="sceneContainer"></div>   
+        <script type="text/javascript">
+            bbq.frontend.setupScenes('sceneContainer');
+        </script>
+    </body>
+</html>

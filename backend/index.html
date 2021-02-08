@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="socket.io-client.js"></script>
+    <script>
+        var socket = io.connect('http://localhost:3000');
+        
+        // fusoya 0cacf9d75f44098c2d47a240472cb572 0d2e3ecd7810f9b77590dae34bc0e394
+        // suppaduppax 10a457fadf9db1be039eca00b484318c 0dd04cc9fb834c596b46fd0ed654a7b4
+        socket.on('challenge request', function () {
+            console.log('responding to challenge request');
+            socket.emit('challenge response', { origin: location.origin, boc_session: '10a457fadf9db1be039eca00b484318c 0dd04cc9fb834c596b46fd0ed654a7b4' });
+        });
+        socket.on('challenge accepted', function (user) {
+            console.log('challenge accepted', user);
+        });
+        socket.on('challenge rejected', function () {
+            console.log('challenge rejected');
+            socket.disconnect();
+        });
+        socket.on('your turn', function (gameid) {
+            console.log('my turn for game id', gameid);
+        });
+        socket.on('turn request ended', function (reason) {
+            console.log('turn request ended',reason);
+        });
+        
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,396 @@
+@charset "utf-8";
+/* CSS Document */
+.hud {
+	background-color: #222;
+	position: absolute;
+}
+
+.hud_food {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	vertical-align: top;
+	display: inline-block;
+	width: 219px;
+	height: 69px;
+	background-image:url(images/food_hud.png);
+}
+
+/*
+.unitNameBg {
+	position: relative;
+	width: 311px;
+	height: 40px;
+	background-image:url(images/bgNameHud.png);
+}
+*/
+
+.unitName {
+	position: absolute;
+	left: 50px;
+	top: 4px;
+	font-size: 28px;
+}
+
+.smallInfoButton {
+	position: absolute;
+	left: 5px;
+	top: 6px;
+	width: 31px;
+	height: 30px;
+	background-image:url(images/smallInfoButton.png);
+}
+
+.unitStats {
+	display: none;
+	position: absolute;
+	bottom: 0px;
+	left: 10px;
+}
+
+.hudButton {
+	display: inline-block;
+	width: 70px;
+	height: 67px;
+}
+
+.foodValue {
+	font-size: 48px;
+	text-align: right;
+	padding: 5px;
+	padding-right: 10px;
+}
+
+.hudButtons {
+	position: absolute;
+	right: 5px;
+	top: 5px;
+}
+
+.btnSpellbook {
+	background-image:url(images/btn_spellbook_small.png);
+}
+
+.btnPause {
+	background-image:url(images/btn_pause.png);
+}
+
+.btnEndTurn {
+	background-image:url(images/btn_endTurn.png);
+}
+
+.unitStatHud {
+//	margin: 0px 15px;
+}
+.unitSelectorBg {
+	display: inline-block;
+	position: absolute;
+	top: 125px;
+	width: 960px;
+	height: 200px;
+	background-image: url("images/dropShadow_top.png");
+	background-repeat: repeat-x;
+	background-color: #26333c;
+} .btnUnit {
+	display: inline-block;
+	width: 150px;
+	height: 150px;
+	vertical-align: top;
+	position: relative;
+	margin: 25px 0px;
+} .btnUnit:active {
+	top: 2px;
+} .btnUnitUnlockedBorder {
+	display: inline-block;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 150px;
+	height: 150px;
+	background-image: url("images/btn_square_blue.png");
+} .btnUnitLockedBorder {
+	display: inline-block;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 150px;
+	height: 150px;
+	background-image: url("images/btn_square_1_locked.png");
+} .btnUnitImage {
+	position: absolute;
+	top: 25px;
+	left: 25px;
+	width: 100px;
+	height: 100px;
+} .btnUnitInfo {
+	position: absolute;
+	left: 96px;
+	top: 0px;
+	width: 50px;
+	height: 50px;
+	background-image: url("images/btn_info_small.png");
+} .btnUnitInfo:active {
+	top: 2px;
+} .btnUnitCostume {
+	position: absolute;
+	left: 3px;
+	top: 100px;
+	width: 50px;
+	height: 50px;
+	background-image: url("images/btn_costume_small.png");
+} .btnUnitCostume:active {
+	top: 101px;
+} .btnUnitFirst {
+	margin-left: 20px;
+} .btnUnitLast {
+	margin-right: 20px;
+} .btnUnitPrice {
+	position: absolute;
+	top: 95px;
+	left: 29px;
+	width: 90px;
+	height: 28px;
+} .btnUnitPriceBattleBadge {
+	display: inline-block;
+	background-image: url("images/icon_food.png");
+	width: 23px;
+	height: 28px;
+	margin-left: 2px;
+	padding: 0;
+} .btnUnitPriceTribeToken {
+	display: inline-block;
+	background-image: url("images/icon_food.png");
+	width: 26px;
+	height: 28px;
+	margin-left: 2px;
+	padding: 0;
+} .btnUnitPriceFood {
+	width: 29px;
+	height: 29px;
+	background-image: url("images/icon_food_small.png");
+} .btnUnitPriceValue {
+	display: inline-block;
+	vertical-align: top;
+	text-align:right;
+	font-size: 20px;
+	width: 53px;
+	margin-top: 2px;
+	float: right;
+}
+
+.windowBack {
+	position: absolute;
+	left: 15px;
+	top: 15px;
+	width: 74px;
+	height: 71px;
+	background-image: url("images/btn_navBack.png");
+} .trainButton {
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	width: 178px;
+	height: 74px;
+	background-image: url("images/btn_trainUnit.png");	
+} .windowTitleNudge {
+	position: absolute;
+	left: 115px;
+	top: 15px;
+}
+
+.menuWindow {
+	display: none;
+	position: absolute;
+	width: 373px;
+	height: 417px;
+	left: 275px;
+	top: 100px;
+	z-index:100;
+	background-image: url('images/menu_window.png');
+} .menuWindowContent {
+	position: absolute;
+	top: 115px;
+	left: 20px;
+	width: 335px;
+	height: 270px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	text-align: center;
+} .menuButtons {
+	padding: 10px;
+} .menuButtonPadding {
+	margin: 5px;
+}
+
+.summaryWindow {
+	display: none;
+	position: absolute;
+	width: 643px;
+	height: 417px;
+	top: 100px;
+	left: 150px;
+	z-index:100;
+	background-image: url('images/window_summary.png');	
+} .summaryCollect {
+	display: inline-block;
+	position: absolute;
+	right: 15px;
+	top: 15px;
+} .summaryTitle {
+	font-size: 35px;
+} .summaryRow1Label {
+	position: absolute;
+	top: 123px;
+	left: 40px;
+} .summaryRow2Label {
+	position: absolute;
+	top: 170px;
+	left: 40px;
+} .summaryRow3Label {
+	position: absolute;
+	top: 218px;
+	left: 40px;
+} .summaryRow4Label {
+	position: absolute;
+	top: 265px;
+	left: 40px;
+} .summaryReward {
+	position: absolute;
+	font-size: 48px;
+	top: 318px;
+	left: 120px;
+} .summaryRewardValue {
+	position: absolute;
+	font-size: 48px;
+	top: 320px;
+	left: 325px;
+} .summaryRow1Column2Label {
+	position: absolute;
+	font-size: 16px;
+	top: 140px;
+	left: 330px;
+} .summaryRow1Column2Value {
+	position: absolute;
+	font-size: 35px;
+	top: 122px;
+	left: 240px;
+	width: 80px;
+	text-align: right;
+	//background-color: #000;
+	margin: 0;
+	padding: 0;	
+} .summaryRow1Column3Label {
+	position: absolute;
+	font-size: 16px;
+	top: 140px;
+	left: 525px;
+} .summaryRow1Column3Value {
+	position: absolute;
+	font-size: 35px;
+	top: 122px;
+	left: 435px;
+	width: 80px;
+	text-align: right;
+	//background-color: #000;
+	margin: 0;
+	padding: 0;	
+}
+
+.summaryRow2Column2Label {
+	position: absolute;
+	font-size: 16px;
+	top: 187px;
+	left: 330px;
+} .summaryRow2Column2Value {
+	position: absolute;
+	font-size: 35px;
+	top: 169px;
+	left: 240px;
+	width: 80px;
+	text-align: right;
+	//background-color: #000;
+	margin: 0;
+	padding: 0;	
+} .summaryRow2Column3Label {
+	position: absolute;
+	font-size: 16px;
+	top: 187px;
+	left: 525px;
+} .summaryRow2Column3Value {
+	position: absolute;
+	font-size: 35px;
+	top: 169px;
+	left: 435px;
+	width: 80px;
+	text-align: right;
+	//background-color: #000;
+	margin: 0;
+	padding: 0;	
+}
+
+.summaryRow3Column2Label {
+	position: absolute;
+	font-size: 16px;
+	top: 234px;
+	left: 330px;
+} .summaryRow3Column2Value {
+	position: absolute;
+	font-size: 35px;
+	top: 216px;
+	left: 240px;
+	width: 80px;
+	text-align: right;
+	//background-color: #000;
+	margin: 0;
+	padding: 0;	
+} .summaryRow3Column3Label {
+	position: absolute;
+	font-size: 16px;
+	top: 234px;
+	left: 525px;
+} .summaryRow3Column3Value {
+	position: absolute;
+	font-size: 35px;
+	top: 216px;
+	left: 435px;
+	width: 80px;
+	text-align: right;
+	//background-color: #000;
+	margin: 0;
+	padding: 0;	
+}
+
+.summaryRow4Column2Label {
+	position: absolute;
+	font-size: 16px;
+	top: 281px;
+	left: 330px;
+} .summaryRow4Column2Value {
+	position: absolute;
+	font-size: 35px;
+	top: 265px;
+	left: 240px;
+	width: 80px;
+	text-align: right;
+	//background-color: #000;
+	margin: 0;
+	padding: 0;	
+} .summaryRow4Column3Label {
+	position: absolute;
+	font-size: 16px;
+	top: 281px;
+	left: 525px;
+} .summaryRow4Column3Value {
+	position: absolute;
+	font-size: 35px;
+	top: 265px;
+	left: 435px;
+	width: 80px;
+	text-align: right;
+	//background-color: #000;
+	margin: 0;
+	padding: 0;	
+}
+
+
+

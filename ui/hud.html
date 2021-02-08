@@ -1,0 +1,259 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>Untitled Document</title>
+    <link href="hud2.css" rel="stylesheet" type="text/css" />
+    <link href="ui2.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="noSelect noDrag">
+<div class="hud">
+    <div class="hudFood hudStatContainer">
+        <div class="hudStat">
+            <img class="food" />
+            <span id="foodValue">0</span>
+        </div>
+    </div>
+    <div class="soundBtn">
+        <div class="buttonContainer">
+            <div class="button buttonBlue btn50x50 boxShadow">
+                <img class="soundOn" />
+                <span class="labelSmall">
+                    $OnOff
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="hudButtons">
+        <!--
+        <div class="btnPause buttonContainer hudButtonMargin">
+            <div id="btnMatchWaiting" class="button buttonBlue btnWord boxShadow">
+				<div class="content">
+            		<span class="label">Match<br />Waiting!</span>
+            	</div>
+            </div>
+            <div class="badgeContainer">
+                <div id="btnMatchWaiting" class="button buttonYellowStatic btnBadge">
+                    <div class="content">
+                        <span class="labelBadge">9</span>
+                    </div>
+                </div>
+			</div>
+        </div>
+        -->
+        <div class="btnEndTurnPosition buttonContainer hudButtonMargin">
+            <div id="btnEndTurn" class="button buttonBlue btn50x50 boxShadow">
+                <div class="content">
+                    <span class="endTurn">
+                        End Turn
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="btnPausePosition btnPause buttonContainer hudButtonMargin">
+            <div class="button buttonBlue btn50x50 boxShadow">
+                <img class="pause" />
+            </div>
+        </div>
+    </div>
+    <div id="trainWindow" class="panelContainer autoadjust">
+        <div class="panelTitle">Train a Unit</div>
+        <div class="panelWithTitle horiScroll skinnedScrollbar boxShadow">
+            <div class="panelFlood">
+                <div id="trainUnitContainer" class="panelVAlign">
+                    <div class="unitContainer unitContainerExpand">
+                        <div class="unitInfo center">
+                            <div class="unitNameBg">
+                                <span>
+                                $displayName
+                                </span>
+                            </div> <!-- unitNameBg -->
+                            <div class="unitDesc">
+                                The Oracle can reveal an area of 1 radius and even reveals high grass
+                            </div> <!-- unitDesc -->
+                            <div class="unitPriceBg">
+                                <div class="vAlign">
+                                    <div class="trainButton center buttonContainer button buttonBlue">
+                                        <div class="content">
+                                            <span class="labelLarge btnWord">
+                                                Train
+                                            </span>
+                                        </div> <!-- content -->
+                                    </div> <!-- buttonContainer -->
+                                </div> <!-- vAlign -->
+                            </div> <!-- unitPriceBg -->
+                        </div> <!-- unitInfo -->
+                        <div class="unitBg">
+                            <img class="unitImage" />
+                            <div class="unitPriceBg">
+                                <div class="vAlign">
+                                	<img class="unitPriceIcon iconFoodSmall" />
+                                </div> <!-- vAlign -->
+                                <div class="vAlign">
+                                    <span class="unitPriceValue">$foodCost</span>
+                                </div> <!-- vAlign -->
+                            </div> <!-- unitPriceBg -->
+                        </div> <!-- unitBg -->
+                    </div> <!-- unitContainer -->
+                    
+                    <div class="unitContainer">
+                        <div class="unitBg">
+                            <img class="unitImage" />
+                            <div class="unitPriceBg">
+                                <div class="vAlign">
+                                	<img class="unitPriceIcon iconBattleBadge" />
+                                </div> <!-- vAlign -->
+                                <div class="vAlign">
+                                    <span class="unitPriceValue">999</span>
+                                </div> <!-- vAlign -->
+                            </div> <!-- unitPriceBg -->
+                        </div> <!-- unitBg -->
+                    </div> <!-- unitContainer -->
+                    
+                </div> <!-- panelVAlign -->
+            </div> <!-- panelFlood -->
+		</div> <!-- panelWithTitle -->
+
+        <div id="closeTrainWindow" class="panelClose">
+            <div class="buttonContainer">
+                <div class="button buttonBlue btn50x50 boxShadow">
+                    <div class="content">
+                        <span class="labelExtraLarge">
+                        X
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+    <div id="unitStats" class="unitStats">
+        <div class="hudStatUnitName hudStatMargin centerMargin center">
+            <div class="button buttonBlue hudStatPadding">
+                <div class="content">
+                    <span id="unitName" class="labelLarge">
+                        Spear Warrior
+                    </span>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="hudStatContainer hudStatMargin">
+            <div class="hudStat hudStatSmall">
+                <img class="health" />
+                <span id="unitHealth">99</span>
+            </div>
+        </div>
+        <div class="hudStatContainer hudStatMargin">
+            <div class="hudStat hudStatSmall">
+                <img class="attack" />
+                <span id="unitAttack">99</span>
+            </div>
+        </div>
+        <div class="hudStatContainer hudStatMargin">
+            <div class="hudStat">
+                <img class="range" />
+                <span id="unitRange">9-99</span>
+            </div>
+        </div>
+        <div class="hudStatContainer hudStatMargin">
+            <div class="hudStat hudStatSmall">
+                <img class="movement" />
+                <span id="unitMovement">99</span>
+            </div>
+        </div>
+        <div class="hudStatContainer hudStatMargin">
+            <div class="hudStat hudStatSmall">
+                <img class="vision" />
+                <span id="unitVision">99</span>
+            </div>
+        </div>
+    </div>
+        
+    <div class="pauseMenuContainer autoadjust hidden" style="display:none">        
+        <div class="pauseMenu boxShadowLarge">
+            <div class="buttonContainer pauseMenuButtonMargin">
+                <div id="menuResume" class="button buttonBlue btnPauseMenu">
+                    <div class="content">
+                    <span class="labelLarge">
+                        Resume
+                    </span>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="buttonContainer">
+                <div id="menuBattles" class="button buttonBlue btnPauseMenu pauseMenuButtonMargin">
+                    <div class="content">
+                    <span class="labelLarge">
+                        Main Menu
+                    </span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="buttonContainer">
+                <div id="menuForfeit" class="button buttonRed btnPauseMenu pauseMenuButtonMargin">
+                    <div class="content">
+                    <span class="labelLarge">
+                        Forfeit
+                    </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>
+    
+    <div id="summaryWindow" class="autoadjust summaryWindow boxShadowLarge center" style="display: none">
+        <div class="header">
+            <span id="summaryTitle" value="summaryTitle" class="title">
+                You Win!
+            </span>
+        </div>
+        <div class="body">
+            <div class="stat">
+                <div class="name">Units</div>
+                <div class="stat1"><span id="summaryRow1Column2Value" class="value">999</span><span class="label">Destroyed</span></div>
+                <div class="stat2"><span id="summaryRow1Column3Value" class="value">999</span><span class="label">Lost</span></div>
+            </div>
+            <div class="stat">
+                <div class="name">Buildings</div>
+                <div class="stat1"><span id="summaryRow2Column2Value" class="value">999</span><span class="label">Captured</span></div>
+                <div class="stat2"><span id="summaryRow2Column3Value" class="value">999</span><span class="label">Total</span></div>
+            </div>
+            <div class="stat">
+                <div class="name">Food</div>
+                <div class="stat1"><span id="summaryRow3Column2Value" class="value">999</span><span class="label">Harvested</span></div>
+                <div class="stat2"><span id="summaryRow3Column3Value" class="value">999</span><span class="label">Spent</span></div>
+            </div>
+            <div class="stat">
+                <div class="name">Turns</div>
+                <div class="stat1"><span id="summaryRow4Column2Value" class="value">999</span><span class="label">Total</span></div>
+                <div class="stat2"><span id="summaryRow4Column3Value" class="value">999</span><span class="label">Average</span></div>
+            </div>
+            <div class="reward">
+                <div class="label">Reward</div>
+                <div class="valueBg">
+                    <img class="badge" />
+                    <div id="summaryRewardValue" class="value">999</div>
+                </div>
+                <div class="collectButton">
+                    <div id="testButtonHide" class="buttonContainer">
+                        <div id="summaryCollect" class="button btnWord buttonBlue">
+                            <div class="content">
+                            Collect!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

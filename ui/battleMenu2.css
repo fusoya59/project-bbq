@@ -1,0 +1,165 @@
+@charset "utf-8";
+/* CSS Document */
+.battleContainer {
+	position: relative;
+	display: inline-block;
+	height: 87px;
+	width: 220px;
+	margin: 10px;
+}
+
+.battleStatusLeft {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 90px;
+	height: 20px;
+	background-color: #fff;
+	color: #333b47;
+	text-align: center;
+	font-family: "bebas_neueregular";
+	font-size: 16px;
+	padding-top: 1px;
+}
+
+.battleStatusRight {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	width: 90px;
+	height: 20px;
+	background-color: #fff;
+	color: #333b47;
+	text-align: center;
+	font-family: "bebas_neueregular";
+	font-size: 16px;
+	padding-top: 1px;
+}
+
+.btnBattle {
+	padding: 0px 5px;
+	width: 208px;
+	height: 48px;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+
+.btnBattlePosition {
+	display: inline-block;
+	position: absolute;
+	top: 17px;
+	left: 0px;
+	//width: 100%;
+}
+
+.btnFindBattle {
+	padding: 0px 5px;
+	width: 208px;
+	height: 68px;
+	border: 1px dashed #fff;
+	background-color: transparent;
+}
+
+.battleIcon {
+}
+
+.battleName {
+	position: absolute;
+	left: 50px;
+	width: 160px;
+	top: 12px;
+	font-family: "JungleFeverRegular";
+	font-size: 20px;
+	color: #fff;
+}
+
+.btnBattle > img.check {
+	position: absolute;
+	left: 10px;
+	top: 8px;
+	display: inline-block;
+	content: URL("images/iconCheck.png");
+} .btnBattle > img.clock {
+	position: absolute;
+	left: 10px;
+	top: 8px;
+	display: inline-block;
+	content: URL("images/iconClock.png");
+} .button > .content > img.magnify {
+	display: inline-block;
+	content: URL("images/iconMagnify.png");
+} .btnBattle > img.win {
+	position: absolute;
+	left: 5px;
+	top: 3px;
+	display: inline-block;
+	content: URL("images/iconWin.png");
+} .btnBattle > img.lose {
+	position: absolute;
+	left: 5px;
+	top: 3px;
+	display: inline-block;
+	content: URL("images/iconLose.png");
+}
+
+.battleMap {
+	position: absolute;
+	bottom: 0px;
+	width: 218px;
+	height: 20px;
+	background-color: #fff;
+	//padding-bottom: 2px;
+	border: 1px solid #fff;
+	background-color: #36a7bc;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.battleMap > .label > span, .battleMap > .value > span {
+	position: absolute;
+	left: 0px;
+	width: 100%;
+	font-family: "bebas_neueregular";
+	font-size: 16px;
+	color: white;
+	bottom: 1px;
+}
+
+.battleMap > div {
+	bottom: 0px;
+	height: 20px;
+}
+.battleMap > .label {
+	position: absolute;
+	width: 50px;
+	border-right: 1px solid #fff;
+	background-color: #277987;
+	border-bottom-left-radius: 5px;
+}
+
+.battleMap > .value {
+	position: absolute;
+	right: 0px;
+	width: 167px;
+	background-color: #175d6a;
+	border-bottom-right-radius: 5px;
+}
+
+.battleMap > span.mapLabel {
+	position: absolute;
+	bottom: 1px;
+	left: 0px;
+	//height: 20px;
+	width: 25%;
+}
+
+.battleMap > span.mapValue {
+	position: absolute;
+	bottom: 1px;
+	left: 0px;
+	//height: 20px;
+	width: 75%;
+	font-family: "bebas_neueregular";
+	font-size: 14px;
+	color: white;
+}

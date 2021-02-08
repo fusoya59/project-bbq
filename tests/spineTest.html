@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script type="text/javascript" src="../libs/core/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../libs/core/resources.js"></script>
+    <script type="text/javascript" src="../libs/core/bocSpine.js"></script>
+    <script type="text/javascript" src="../libs/core/spine.js"></script>
+    <script type="text/javascript" src="spineTest.js"></script>
+</head>
+<body>
+    
+    <script type="text/javascript">
+        var canvas = document.createElement('canvas');
+        var context = canvas.getContext('2d');
+        function drawStuff() {
+            var skele = boc.spine.SkeletonManager.createSkeleton('witchdoctor_blue', { x: 50, y: -50} );
+            skele.setSkinByName('defaultSkin');
+            skele.setSlotsToSetupPose();
+            boc.spine.renderSkeleton(skele, context);
+            var img = document.createElement('img');
+            img.src = canvas.toDataURL();
+            $(document.body).append(img);
+        }
+
+        loadSpine(
+            [
+                '../assets/graphics/spine/axethrower/axethrower',
+                '../assets/graphics/spine/brute/brute',
+                '../assets/graphics/spine/oracle/oracle',
+                '../assets/graphics/spine/witchdoctor/witchdoctor'
+            ],
+            {
+                teams: ['red', 'blue'],
+                onload: function (assets) {
+                    boc.spine.SkeletonManager.load(assets);
+                    drawStuff();
+                }
+            }
+        );
+    </script>
+</body>
+</html>

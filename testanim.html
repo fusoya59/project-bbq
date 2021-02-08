@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+	<span id="num">999</span>
+</body>
+
+<script>
+	function start() {
+		var numElem = document.getElementById("num");
+		var curNum = Number(numElem.innerHTML);
+		var _this = this;
+		
+		var animate = function (startVal, endVal, elapsed, duration) {
+			var numElem = document.getElementById("num");
+			
+			var speed = 10;
+			elapsed++;
+			
+			//var val = (endVal - startVal) / (duration - elapsed) / speed;
+			val = elapsed;
+			console.log(val);
+			numElem.innerHTML = val.toString();
+
+			if (elapsed < 5000) {
+				window.setTimeout(animate(curNum, 800, elapsed, 100), 1000000);
+			}
+			
+		};
+		
+		animate(curNum, 800, 0, 100);
+		
+	}
+	
+	start();
+</script>
+</html>

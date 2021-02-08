@@ -1,0 +1,356 @@
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <script type="text/javascript" src="core/Barrett.js"></script>
+        <script type="text/javascript" src="core/BigInt.js"></script>
+        <script type="text/javascript" src="core/RSA.js"></script>        
+        <script type="text/javascript" src="core/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="core/easing.js"></script>
+        <script type="text/javascript" src="core/constants.js"></script>
+        <script type="text/javascript" src="core/entitysystem.js"></script>
+        <script type="text/javascript" src="core/components.js"></script>        
+        <script type="text/javascript" src="core/systems.js"></script>
+        <script type="text/javascript" src="core/utils.js"></script>
+
+        <script type="text/javascript">
+            /**
+            * request animation frame convenience
+            * http://paulirish.com/2011/requestanimationframe-for-smart-animating/
+            */
+            window.requestAnimFrame = (function () {
+                return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
+                function (callback) {
+                    var timeFrame = 1000 / 60;
+                    window.setTimeout(function () { callback(+new Date); }, timeFrame);
+                };
+            })();
+        </script>
+    </head>
+    <body>
+        <div id="mydiv">
+            <canvas id="mycanvas" width="640" height="480"></canvas>
+        </div>
+        <script type="text/javascript">
+            var playerid = 'alvin',
+                password = 'krvNnrDl';
+            function onLogIn() {
+                console.log('successfully logged in as '  +playerid);
+                console.log('getting friends');
+                boc.utils.getJson('get/friends', { playerid: playerid }, function (json) {
+                    if (json && json.status == 'ok') {
+                        for (var i = 0; i < json.result.length; i++) {
+                            console.log(json.result[i]);
+                        }
+                    }
+                });
+                boc.utils.post('friend/request', { playerid: 'fusoya' }, function (json) {
+                    if (json && json.result) {
+                        console.log(json.result);
+                    }
+                });
+                //boc.utils.post('message',
+                //    {
+                //        sender: 'fusoya',
+                //        recipient : 'suppaduppax',
+                //        subject : 'My subject',
+                //        body : 'hello there this is a message!'
+                //    },
+                //    function (json) {
+                //        if (json && json.result) {
+                //            console.log(json.result);
+                //        }
+                //    }
+                //);
+
+            }
+
+            boc.utils.requestApiKey(function (apiKey) {                
+                if (apiKey) {
+                    var token = encryptedString(apiKey, playerid + '+' + password + '+' + (+new Date));
+                    boc.utils.getJson('login/' + token, {}, function (json) {
+                        if (json.status == 'ok') {
+                            boc.utils.sessionKey = json.result.boc_session;
+                            onLogIn();
+                        } 
+                    });
+                }
+            });
+        </script>
+        <script type="text/javascript">            
+            /*
+            var tileWidth = 50, tileHeight = 50; // px
+            var numTileColumns = 25;
+            var numTileRows = 25;
+
+            function createTileEntity(x, y, styleOptions) {
+                var tent = new boc.core.Entity({ description: 'tile(' + x + ',' + y + ')' });
+                tent.addComponent(
+                    new boc.components.Spatial({
+                        x: x * tileWidth,
+                        y: y * tileHeight,
+                        z: 0,
+                        width: tileWidth,
+                        height: tileHeight
+                    })
+                );
+                tent.addComponent(
+                    new boc.components.Dirty()
+                );
+                if ($.isArray(styleOptions.fillStyle)) {
+                    tent.addComponent(
+                        new boc.components.FunkyDrawableRect({
+                            fillStyles : styleOptions.fillStyle,
+                            strokeStyles: styleOptions.strokeStyle,
+                            lineWidths : styleOptions.lineWidth
+                        })
+                    );
+                    var animSeq = new boc.utils.AnimationSequence({
+                        entity: tent,
+                        loop: true,
+                        animations: [
+                            new boc.components.Animation({
+                                componentName: 'FunkyDrawableRect',
+                                propertyDeltas: { currentFrame: 1 },
+                                duration : 1000
+                            }),
+                            new boc.components.Animation({
+                                componentName: 'FunkyDrawableRect',
+                                propertyDeltas: { currentFrame: -1 },
+                                duration: 1000
+                            })
+                        ]
+                    });
+                    animSeq.start();
+                }
+                else {
+                    tent.addComponent(
+                        new boc.components.DrawableRect({
+                            fillStyle: styleOptions.fillStyle,
+                            strokeStyle: styleOptions.strokeStyle,
+                            lineWidth: styleOptions.lineWidth
+                        })
+                    );
+                }
+                return tent;
+            } // createTile
+            var em = boc.core.Entity_internal.em();
+            
+            //var layer = new boc.core.Layer({ cellWidth: $('#mycanvas')[0].width, cellHeight: $('#mycanvas')[0].height, numColumns: 8, numRows: 8 });
+            //var layer = new boc.core.Layer({ cellWidth: 250, cellHeight:250, numColumns: 30, numRows: 30 });
+            //var layer = new boc.core.Layer({ cellWidth: 250, cellHeight: 250, numColumns: 20, numRows: 20 });
+            var renderSystem = new boc.systems.RenderSystem(em, $('#mycanvas')[0]);
+            renderSystem.camera(
+                new boc.utils.Camera({
+                    xmin: 0,
+                    xmax: $('#mycanvas')[0].width,
+                    ymin: 0,
+                    ymax: $('#mycanvas')[0].height
+                })
+            );            
+            var cameraFollowSystem = new boc.systems.CameraFollowSystem(em);            
+            var animationSystem = new boc.systems.AnimationSystem(em);
+
+            var mouseInputSystem = new boc.systems.MouseInputSystem(em, $('#mycanvas')[0]);
+            var lifespanSystem = new boc.systems.LifespanSystem(em);
+            var panningCameraSystem = new boc.systems.PanningCameraSystem(em, renderSystem.camera());
+            panningCameraSystem.bounds({
+                xmin: 0,
+                ymin: 0,
+                xmax: tileWidth * numTileColumns,
+                ymax: tileHeight * numTileRows
+            });
+
+            var lastFrame = 0;
+            var stop = false;
+            function loop(now) {
+                if (stop) { return; }
+                requestAnimFrame(loop);                
+                var frameTime = now - lastFrame;
+                mouseInputSystem.processTick(frameTime);
+                panningCameraSystem.processTick(frameTime);
+                animationSystem.processTick(frameTime);
+                cameraFollowSystem.processTick(frameTime);
+                renderSystem.processTick(frameTime);
+                lifespanSystem.processTick(frameTime);
+                lastFrame = now;
+            } // loop
+
+            loop(lastFrame);
+
+            //var numTileColumns = Math.floor(layer.numColumns() * layer.cellWidth() / tileWidth);
+            //var numTileRows = Math.floor(layer.numRows() * layer.cellHeight() / tileHeight);
+            
+            // draw map
+            for (var x = 0; x < numTileColumns ; x++) {                
+                for (var y = 0; y < numTileRows ; y++) {
+                    var tent = null;
+                    var rnd = Math.random();
+                    if (rnd <= 0.25) {
+                        tent = createTileEntity(x, y, { fillStyle : ['blue', 'aqua'], strokeStyle : ['blue', 'aqua'], lineWidth : [0,0] });
+                    }
+                    else {
+                        tent = createTileEntity(x, y, { fillStyle : 'green', strokeStyle : 'black', lineWidth : 1 });
+                    }
+                    //layer.addEntity(tent);
+                } // y                
+            } //x
+
+            // draw units
+            var myUnit = new boc.core.Entity({ description: 'myUnit' });
+            myUnit.addComponent(
+                new boc.components.Spatial({
+                    x: 5,
+                    y: 5,
+                    z: 1,
+                    width: 40,
+                    height : 40
+                })
+            );
+            myUnit.addComponent(
+                new boc.components.DrawableRect({
+                    fillStyle: 'red',
+                    strokeStlye: 'black',
+                    lineWidth : 3
+                })
+            );
+            myUnit.Spatial.addListener('onchange', function (eventArgs) {
+                if (eventArgs.newDimension.y > 50) {
+                    if (myUnit.Spatial.z != 50) { myUnit.Spatial.update({ z: 50 }); }
+                }
+                else {
+                    if (myUnit.Spatial.z != 1) { myUnit.Spatial.update({ z: 1 }); }
+                }
+            });
+            myUnit.addComponent(new boc.components.Dirty());
+            //layer.addEntity(myUnit);
+
+            var animSeq = new boc.utils.AnimationSequence({
+                loop: true,
+                entity: myUnit,
+                animations: [
+                    new boc.components.Animation({
+                        componentName: 'Spatial',
+                        propertyDeltas : { y : 100 },
+                        duration : 2000
+                    }),
+                    new boc.components.Animation({
+                        componentName: 'Spatial',
+                        propertyDeltas: { x: 100 },
+                        duration: 2000
+                    }),
+                    new boc.components.Animation({
+                        componentName: 'Spatial',
+                        propertyDeltas: { x: -100 },
+                        duration: 2000
+                    }),
+                    new boc.components.Animation({
+                        componentName: 'Spatial',
+                        propertyDeltas: { y: -100 },
+                        duration: 2000
+                    })
+                ]
+            });
+            animSeq.start();
+
+            var myBuilding = new boc.core.Entity({ description: 'myBuilding' });
+            myBuilding.addComponent(
+                new boc.components.Spatial({
+                    x: 10 ,
+                    y: 10 + 50 - 20,
+                    z: 10,
+                    width: 30,
+                    height: 30 + 20
+                })
+            );
+            myBuilding.addComponent(
+                new boc.components.DrawableRect({
+                    fillStyle: 'yellow',
+                    strokeStlye: 'black',
+                    lineWidth: 4
+                })
+            );
+            myBuilding.addComponent(
+                new boc.components.CameraFollow({ camera: renderSystem.camera() })
+            );
+            myBuilding.addComponent(new boc.components.Dirty());
+            //layer.addEntity(myBuilding);
+
+            // random boxes
+            var numBoxes = 500;
+            for (var i = 0; i < numBoxes; i++) {
+                var box = new boc.core.Entity({ description: 'box' });
+                box.addComponent(
+                    new boc.components.Dirty()
+                );
+                box.addComponent(
+                    new boc.components.Spatial({
+                        x: Math.floor(Math.random() * (tileWidth * numTileColumns - 100)),
+                        y: Math.floor(Math.random() * (tileHeight * numTileRows - 100)),
+                        z: 2,
+                        width: Math.floor(Math.random() * 95) + 5,
+                        height: Math.floor(Math.random() * 95) + 5
+                    })
+                );
+                box.addComponent(
+                    new boc.components.DrawableRect({
+                        fillStyle: 'rgb(' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ')',
+                        strokeStlye: 'black',
+                        lineWidth: Math.floor(Math.random() * 7) + 1
+                    })
+                );
+                if (Math.random() <= 0.25) {
+                    var dx = Math.floor(Math.random() * 400) - 200;
+                    var dy = Math.floor(Math.random() * 400) - 200;
+                    var animSeq = new boc.utils.AnimationSequence({
+                        loop: true,
+                        entity: box,
+                        animations: [
+                            new boc.components.Animation({
+                                componentName: 'Spatial',
+                                propertyDeltas: { x: dx,  y: dy },
+                                duration: 1000 + Math.round(Math.random() * 1000)
+                            }),
+                            new boc.components.Animation({
+                                componentName: 'Spatial',
+                                propertyDeltas: { x: -dx, y: -dy },
+                                duration: 1000 + Math.round(Math.random() * 1000)
+                            })                            
+                        ]
+                    });
+                    animSeq.start();
+                }
+                //layer.addEntity(box);                
+            }
+            $(document).keydown(function (event) {
+                switch (event.keyCode) {
+                    case 65:
+                    case 37: // left
+                        if (renderSystem.camera().xmin > 0) {
+                            renderSystem.camera().move(-10, 0);
+                        }
+                        break;
+                    case 68:
+                    case 39: // right
+                        
+                        if (renderSystem.camera().xmax < tileWidth * numTileColumns - $('#mycanvas')[0].width) {
+                            renderSystem.camera().move(10, 0);
+                        }
+                        break;
+                    case 87:
+                    case 38: // up
+                        if (renderSystem.camera().ymin > 0) {
+                            renderSystem.camera().move(0, -10);
+                            
+                        }
+                        break;
+                    case 83:
+                    case 40: // down
+                        if (renderSystem.camera().ymax < tileHeight * numTileRows - $('#mycanvas')[0].height) {
+                            renderSystem.camera().move(0, 10);                            
+                        }
+                        break;
+                }
+            });*/
+        </script>
+    </body>
+</html>

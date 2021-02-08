@@ -1,0 +1,742 @@
+@charset "utf-8";
+/* CSS Document */
+@font-face {
+    font-family: 'armwrestlerbold';
+    src: url('fonts/ArmWrestler-webfont.eot');
+    src: url('fonts/ArmWrestler-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/ArmWrestler-webfont.woff') format('woff'),
+         url('fonts/ArmWrestler-webfont.ttf') format('truetype'),
+         url('fonts/ArmWrestler-webfont.svg#armwrestlerbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'bebas_neueregular';
+    src: url('fonts/BebasNeue-webfont.eot');
+    src: url('fonts/BebasNeue-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/BebasNeue-webfont.woff') format('woff'),
+         url('fonts/BebasNeue-webfont.ttf') format('truetype'),
+         url('fonts/BebasNeue-webfont.svg#bebas_neueregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'JungleFeverRegular';
+    src: url('fonts/JungleFever-webfont.eot');
+    src: url('fonts/JungleFever-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/JungleFever-webfont.woff') format('woff'),
+         url('fonts/JungleFever-webfont.ttf') format('truetype'),
+         url('fonts/JungleFever-webfont.svg#JungleFeverRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MolotRegular';
+    src: url('fonts/Molot-webfont.eot');
+    src: url('fonts/Molot-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Molot-webfont.woff') format('woff'),
+         url('fonts/Molot-webfont.ttf') format('truetype'),
+         url('fonts/Molot-webfont.svg#MolotRegular') format('svg');
+    font-weight: lighter;
+    font-style: normal;
+
+}
+
+a:link {text-decoration:none;}      /* unvisited link */
+a:visited {text-decoration:none;}  /* visited link */
+a:hover {text-decoration:none;}  /* mouse over link */
+a:active {text-decoration:none;}
+
+.fadeBlack {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,.8);
+}
+
+body {
+	margin: 0;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #0c5a7a;
+	background-image: url("images/BG2.jpg");
+	background-repeat: repeat;
+	background-size: 300px 300px;
+	-moz-user-select: none; 
+    -khtml-user-select: none; 
+    -webkit-user-select: none; 
+    -o-user-select: none;
+
+	user-drag: none;
+	-moz-user-select: none;
+	-webkit-user-drag: none;		
+}
+
+.button {
+	position: relative;
+	background-color: #38c0d8;
+	display: table;
+	vertical-align: middle;
+	
+	border: 1px solid #fff;
+	border-radius: 5px;
+
+	text-align: center;
+
+	//cursor: default;
+} 
+
+.buttonBlue_old, .buttonBlueStatic_old {
+	background: #38c0d8; /* Old browsers */
+	background: -moz-linear-gradient(top,  #38c0d8 0%, #36a7bc 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#38c0d8), color-stop(100%,#36a7bc)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #38c0d8 0%,#36a7bc 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #38c0d8 0%,#36a7bc 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #38c0d8 0%,#36a7bc 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #38c0d8 0%,#36a7bc 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#38c0d8', endColorstr='#36a7bc',GradientType=0 ); /* IE6-9 */
+}
+
+.buttonBlue, .buttonBlueStatic {
+	background-image: url(images/BGbutton.jpg);
+} .buttonBlue:hover {
+	background: #58d3e8; /* Old browsers */
+	background: -moz-linear-gradient(top,  #58d3e8 0%, #6baeba 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#58d3e8), color-stop(100%,#6baeba)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #58d3e8 0%,#6baeba 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #58d3e8 0%,#6baeba 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #58d3e8 0%,#6baeba 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #58d3e8 0%,#6baeba 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#58d3e8', endColorstr='#6baeba',GradientType=0 ); /* IE6-9 */
+} 
+
+.buttonRed_old, .buttonRedStatic_old  {
+	background: #d75038; /* Old browsers */
+	background: -moz-linear-gradient(top,  #d75038 0%, #af5342 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d75038), color-stop(100%,#af5342)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #d75038 0%,#af5342 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #d75038 0%,#af5342 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #d75038 0%,#af5342 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #d75038 0%,#af5342 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d75038', endColorstr='#af5342',GradientType=0 ); /* IE6-9 */
+} .buttonRed, .buttonRedStatic {
+	background-image: URL("images/BGbuttonRed.jpg");
+} .buttonRed:hover {
+	background: #e96c56; /* Old browsers */
+	background: -moz-linear-gradient(top,  #e96c56 0%, #bd6859 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e96c56), color-stop(100%,#bd6859)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #e96c56 0%,#bd6859 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #e96c56 0%,#bd6859 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #e96c56 0%,#bd6859 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #e96c56 0%,#bd6859 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e96c56', endColorstr='#bd6859',GradientType=0 ); /* IE6-9 */
+
+}
+
+.buttonYellow_old, .buttonYellowStatic_old {
+	background: #d7bc38; /* Old browsers */
+	background: -moz-linear-gradient(top, #d7bc38 0%, #afa442 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d7bc38), color-stop(100%,#afa442)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #d7bc38 0%,#afa442 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #d7bc38 0%,#afa442 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #d7bc38 0%,#afa442 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #d7bc38 0%,#afa442 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d7bc38', endColorstr='#afa442',GradientType=0 ); /* IE6-9 */
+} .buttonYellow, .buttonYellowStatic {
+	background-image: url("images/BGbuttonYellow.jpg");
+} .buttonYellow:hover {
+	background: #e9cd48; /* Old browsers */
+	background: -moz-linear-gradient(top,  #e9cd48 0%, #c5b954 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e9cd48), color-stop(100%,#c5b954)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #e9cd48 0%,#c5b954 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #e9cd48 0%,#c5b954 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #e9cd48 0%,#c5b954 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #e9cd48 0%,#c5b954 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e9cd48', endColorstr='#c5b954',GradientType=0 ); /* IE6-9 */
+}
+
+.buttonContainer {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+} .buttonContainer:hover {
+} .buttonContainer:active {
+	top: 1px;
+}
+
+.button > .content {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.button > .content > span.label {
+	font-family: "bebas_neueregular";
+	font-size: 14px;
+	color: #fff;
+}
+
+.btn50x50 > span.label {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	width: 48px;
+	font-family: "bebas_neueregular";
+	font-size: 16px;
+	color: #fff;
+} .btn50x50 > span.labelSmall {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	width: 48px;
+	font-family: "bebas_neueregular";
+	font-size: 16px;
+	//letter-spacing: -0.5px;
+	color: #fff;
+}
+
+
+.button > .content > span.labelLarge {
+	font-family: "JungleFeverRegular";
+	font-size: 20px;
+	color: #fff;
+}
+
+.button > .content > span.labelExtraLarge {
+	font-family: "bebas_neueregular";
+	font-size: 36px;
+	color: #fff;
+}
+
+.button > .content > img {
+	text-align: left;
+}
+
+
+.button > img.back {
+	position: absolute;
+	top: 3px;
+	left: 8px;
+	content: URL("images/btnBack.png");
+} .button > img.refresh {
+	position: absolute;
+	top: 3px;
+	left: 8px;
+	content: URL("images/btnRefresh.png");
+} .button > img.cross {
+	display: inline-block;
+	content: URL("images/iconCross.png");
+} 
+
+.btn50x50 > img.pause {
+	margin-top: 12px;
+	display: inline-block;
+	content: URL("images/iconPause.png");
+}
+
+.btn50x50 > img.soundOn {
+	margin-top: 7px;
+	display: inline-block;
+	content: URL("images/btnSoundOn.png");
+} .btn50x50 > img.soundOff {
+	margin-top: 7px;
+	display: inline-block;
+	content: URL("images/btnSoundOff.png");
+}
+
+
+.btn50x50 {
+	width: 48px;
+	height: 48px;
+}
+
+.btn35x35 {
+	width: 35px;
+	height: 35px;
+}
+
+.btn35x35 > img.cross {
+	position: absolute;
+	left: 7px;
+	top: 7px;
+}
+
+.btnWord {
+	height: 48px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.btnBadge {
+	height: 20px;
+	border: 2px solid #fff;
+	padding-left: 5px;
+	padding-right: 5px;
+	border-radius: 10px;
+}
+
+.badgeContainer {
+	position: absolute;
+	top: -10px;
+	right: -10px;
+}
+
+.vertScroll {
+	position: relative;
+	text-align: center;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.horiScroll {
+	position: relative;
+	overflow-x: auto;
+	overflow-y: hidden;
+	white-space: nowrap;
+}
+
+.badges {
+	display: table;
+	border-radius: 10px;
+	width: 160px;
+	height: 43px;
+	border: 1px solid #fff;
+	background-color: #25292E;
+}
+
+.badges > .content {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.badges > .btnAddCurrency {
+	position: absolute;
+	top: 3px;
+	right: 5px;
+	display: table;
+
+}
+
+.badges > span {
+	position: absolute;
+	top: 2px;
+	right: 5px;
+	color: #fff;
+	font-family: "bebas_neueregular";
+	font-size: 34px;
+}
+
+.badges > img.battleBadge {
+	position: absolute;
+	top: 3px;
+	content: url("images/icon_battleBadge_medium.png");
+}
+
+.frontendBody {
+	position: absolute;
+	top: 80px;
+	bottom: 80px;
+	left: 0px;
+	right: 0px;
+	width: 100%;
+}
+
+.frontendBodyNoFooter {
+	position: absolute;
+	top: 80px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	width: 100%;
+}
+
+.frontendHeader {
+	position: absolute;
+	top: 0px;
+	width: 100%;
+}
+
+.frontendHeader > .content {
+	position: relative;
+	margin: 15px;
+}
+
+.frontendButtonRight {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+}
+
+.frontendFooter {
+	position: absolute;
+	bottom: 0px;
+	height: 80px;
+	width: 100%;
+	//display: inline-block;
+}
+
+.frontendFooter > .content {
+	position: relative;
+	margin: 15px;
+	height: 50px;
+	display: block;
+}
+
+.currency {
+	position: absolute;
+	right: 80px;
+	bottom: 0px;
+	display: inline-block;
+	width: 160px;
+	height: 43px;
+}
+
+
+.skinnedScrollbar::-webkit-scrollbar {
+    width: 10px;
+	height: 10px;
+}.skinnedScrollbar::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px #000; 
+	background-color: #222;
+    border-radius: 5px;
+	border: 1px solid #000;	
+}.skinnedScrollbar::-webkit-scrollbar-thumb {
+	background-color: #666;
+    border-radius: 5px;
+    //-webkit-box-shadow: inset 0 0 6px #000;
+	
+	border: 1px solid #fff; 
+
+	background: #38c0d8; /* Old browsers */
+	background: -moz-linear-gradient(top,  #38c0d8 0%, #36a7bc 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#38c0d8), color-stop(100%,#36a7bc)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #38c0d8 0%,#36a7bc 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #38c0d8 0%,#36a7bc 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #38c0d8 0%,#36a7bc 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #38c0d8 0%,#36a7bc 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#38c0d8', endColorstr='#36a7bc',GradientType=0 ); /* IE6-9 */
+}
+
+.panelTitle {
+	//position: absolute;
+	//top: 20px;
+	height: 30px;
+	color: #4f5b6c;
+	font-family: "bebas_neueregular";
+	font-size: 28px;
+	background-color: #fff;
+	width: 300px;
+	text-align: center;
+}
+
+.panelClose {
+	position: absolute;
+	display: inline-block;
+	right: 15px;
+	top: -15px;
+}
+
+.panelContainer {
+	//display: inline-block;
+	position: absolute;
+	width: 100%;
+	height: 300px;
+	left: 0px;
+	top: 0px;
+}
+
+.panel {
+	//display: table;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+	//background-color: #333b47;
+	background-color: #25292E;
+}
+
+.panelWithTitle {
+	//display: table;
+	height: 200px;
+	width: 100%;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+	background-color: #25292E;
+}
+
+.panelFlood {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.table {
+	display: table;
+}
+
+.panelVAlign {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.unitContainer {
+	position: relative;
+	display: inline-block;
+	height: 150px;
+	width: 110px;
+	margin: 10px;
+	transition: .25s ease-out;
+	overflow: hidden;
+}
+
+.unitContainerExpand {
+	display: inline-block;
+	height: 150px;
+	width: 295px;
+	background-color: #
+} 
+ 
+
+.unitBg {
+	position: absolute;
+	left: 0px;
+	display: inline-block;
+	height: 148px;
+	width: 108px;
+	border-radius: 5px;
+	border: 1px solid #fff;
+	background-color: #212429;
+} 
+/*
+.unitContainer:active {
+	position: relative;
+	top: 2px;
+}
+*/
+.unitDesc {
+	position: absolute;
+	top: 25px;
+	left: 0px;
+	margin: 5px;
+	margin-left: 10px;
+	//width: 100%;
+	color: #fff;
+	font-family: Verdana, Geneva, sans-serif;
+	white-space: normal;
+	font-size: 12px;
+}
+
+.unitImage {
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	width: 100px;
+	height: 100px;
+	
+}
+
+.unitInfo {
+	position: absolute;
+	right: 0px;
+	display: inline-block;
+	height: 148px;
+	width: 188px;
+	border-radius: 5px;
+	border: 1px solid #fff;
+	background-color: #212429;
+}
+
+.unitNameBg {
+	position: absolute;
+	display: table;
+	height: 25px;
+	top: 0px;
+	border-bottom: 1px solid #fff;
+	border-top-right-radius: inherit;
+	width: 100%;
+	background-color: #333b47;
+}
+
+.unitNameBg > span {
+	display: table-cell;
+	vertical-align: middle;
+	font-family: "bebas_neueregular";
+	font-size: 20px;
+	color: #fff;
+}
+
+.center {
+	text-align: center;
+	margin: 0px auto;
+}
+
+.centerMargin {
+	margin: 0px auto;
+}
+
+.unitPriceBg {
+	position: absolute;
+	display: table;
+	height: 38px;
+	bottom: 0px;
+	border-top: 1px solid #fff;
+	width: 100%;
+	background-color: #333b47;
+	border-bottom-left-radius: inherit;
+	border-bottom-right-radius: inherit;
+}
+
+.unitPriceBg > .vAlign {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+img.iconBattleBadge {
+	content: url("images/icon_battleBadge.png")
+}
+
+img.iconFoodSmall {
+	content: url("images/icon_food_small.png")
+}
+
+.unitPriceIcon {
+	padding-left: 5px;
+	width: 25px;
+	height: 25px;
+}
+
+.unitPriceValue {
+	font-family: "bebas_neueregular";
+	font-size: 34px;
+	color: #fff;
+}
+
+span.unitPriceSmall {
+	font-family: "bebas_neueregular";
+	font-size: 16px;
+	color: #fff;
+	margin: 0px auto;
+}
+
+.dialogContainer {
+	position: absolute;
+	display: inline-block;
+	top: 0px;
+	left: 0px;
+}
+
+.dialog {
+	margin: 0px auto;
+	position: relative;
+	//height: 150px;
+	display: inline-block;
+	width: 348px;
+	background-color: #333b47;
+	border: 1px solid #fff;
+	border-radius: 10px;
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	text-align: center;
+}
+
+.dialog > .message {
+	font-family: "bebas_neueregular";
+	margin-bottom: 25px;
+	color: #fff;
+	font-size: 28px;
+}
+
+.btnDialog {
+	position: relative;
+	height: 50px;
+	width: 100px;
+}
+
+.dialogButtonMargin {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.toast {
+	position: absolute;
+	display: inline-block;
+	width: 198px;
+	background-color: #333b47;
+	border: 1px solid #fff;
+	border-radius: 10px;
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-top: 25px;
+	padding-bottom: 25px;
+
+	font-family: Verdana, Geneva, sans-serif;
+	color: #fff;
+	font-size: 16px;
+	text-align: center;
+}
+
+.vAlign {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.headerButtonLeft {
+	display: inline-block;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+
+.headerButtonRight {
+	display: inline-block;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+}
+
+.headerTitle {
+	font-family: "JungleFeverRegular";
+	font-size: 36px;
+	color: #fff;
+}
+
+.soundBtn {
+	display: inline-block;
+	position: absolute;
+	right: 15px;
+	bottom: 15px;
+}
+
+.flood {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.alignLeft {
+	text-align: left;
+}
+
+.hidden {
+	display: none;
+}
+
+.labelBadge {
+	font-family: "bebas_neueregular";
+	font-size: 14px;
+	color: #fff;
+}
+

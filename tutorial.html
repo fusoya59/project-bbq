@@ -1,0 +1,254 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <title>Project BBQ</title>
+        <style type="text/css">
+            .sceneContainer
+            {
+	            background-color: #373737;
+	            height: 100%;
+	            width: 100%;
+	            position:relative;
+	            overflow:hidden;
+            }
+
+            .scene
+            {
+	            width:100%;
+	            height:100%;
+	            position:absolute;
+            }
+        </style>
+        <!--<script type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>-->
+        <script type="text/javascript" src="libs/core/namespace.js"></script>
+        <script type="text/javascript" src="include/bbq.js"></script>
+        <script type="text/javascript" src="include/config.js"></script>
+        <script type="text/javascript" src="include/core.js"></script>        
+
+        <script type="text/javascript">            
+            var tutorial;
+            var production = false;
+            function onScriptsLoaded(gameState, hud) {
+
+                var onEverythingLoaded = function () {
+                    $('.toastWindow').remove();
+
+                    var em = boc.core.Entity_internal.em();
+                    em.clear();
+                    var game = null;
+                    //var gameState = null;
+                    //var hud = hud;//new bbq.hud.HtmlHud('hud');        
+                    var canvas = $('canvas')[0];
+                    if (!canvas) {
+                        canvas = document.createElement('canvas');
+                        canvas.width = bbq.frontend.width || 960;
+                        canvas.height = bbq.frontend.height || 640;
+                    }
+                    hud.canvas(canvas);
+
+                    tutorial = new bbq.Tutorial('tutorial', {
+                        gameState: gameState,
+                        canvas: canvas,
+                        entityManager: em,
+                        user: SharedSession.user,
+                        hud: hud,
+                        onLoad: function (gameObj) {
+                            gameObj.victoryCondition = bbq.VictoryConditions.captureHQ;
+                            gameObj.onvictory = bbq.frontend.handleUserWin;
+                            gameObj.start();
+
+                            $('.toastWindow').remove();
+
+                            SharedSession.gameObj = gameObj;
+
+                            if (SharedSession.user.playerid != gameObj.getCurrentPlayer().id) {
+                                bbq.frontend.toast('Waiting for your turn', { id: 'sceneContainer', delay: -1 });
+                            } else {
+                                bbq.frontend.toast('Your turn', { id: 'sceneContainer' });
+                            }                            
+                        }
+                    });
+                    
+                    SharedSession.gameObj = tutorial;
+                }; // onEverythignComplete
+
+                var loadsComplete = 0;
+                var done = function () {
+                    var loadsToComplete = 3;
+                    if (++loadsComplete == loadsToComplete) {
+                        onEverythingLoaded();
+                    }
+                };
+
+                boc.resources.GraphicsManager.loadFiles([
+                    'assets/graphics/pfx_smoke_small.png',
+                    'assets/graphics/pfx_star_small.png',
+                    'assets/graphics/attackButton.png',
+                    'assets/graphics/cancelButton.png',
+                    'assets/graphics/captureButton.png',
+                    'assets/graphics/gatherButton.png',
+                    'assets/graphics/trainButton.png',
+                    'assets/graphics/holdButton.png',
+                    'assets/graphics/moveButton.png',
+                    'assets/graphics/healButton.png',
+                    'assets/graphics/revealButton.png',
+                    'assets/graphics/forestTiles.png',
+                    'assets/graphics/tutorial_arrow.png',
+                    'ui/images/icon_food_small.png'
+                ], done);
+
+                boc.resources.GraphicsManager.load(bbq.assets.graphics, done);
+
+                var allSpinePaths = [];
+                var units = bbq.units.configuration.baseLoadout;
+                units = units.concat(bbq.units.configuration.unlockableUnits);
+                for (var u = 0; u < units.length; u++) {
+                    allSpinePaths.push(bbq.units.configuration[units[u]].spinePath);
+                }
+
+                // gets all the spine assets
+                var teams = ['blue', 'red'];
+                boc.spine.loadSpineAssets(
+                    allSpinePaths,
+                    {
+                        teams: teams,
+                        onload: function (assets) {
+                            // put it in memory
+                            boc.spine.SkeletonManager.load(assets);
+
+                            // render a "default image" for each unit and put it in the cache
+                            for (var i = 0; i < units.length; i++) {
+                                for (var j = 0; j < teams.length; j++) {
+                                    var team = teams[j];
+                                    var img = boc.resources.GraphicsManager.getImage(units[i] + '_' + team);
+                                    if (!img) {
+                                        var canvas = document.createElement('canvas');
+                                        canvas.width = 100;
+                                        canvas.height = 100;
+                                        var context = canvas.getContext('2d');
+                                        var skele = boc.spine.SkeletonManager.createSkeleton(units[i].toLowerCase() + '_' + team, { x: 50, y: -50 });
+                                        skele.setSkinByName('defaultSkin');
+                                        skele.setSlotsToSetupPose();
+                                        boc.spine.renderSkeleton(skele, context);
+                                        img = document.createElement('img');
+                                        img.width = 100;
+                                        img.height = 100;
+                                        img.src = canvas.toDataURL();
+                                        boc.resources.GraphicsManager.addImage(units[i] + '_' + team, img);
+                                    }
+                                } // j
+                            } // i
+                            done();
+                        } // onload
+                    } // onLoadSpineAssets
+                );
+                //tutorial = new bbq.Tutorial(gameState, )
+            } // onScriptsLoaded
+
+            function uiLoaded(scene) {
+                boc.utils._em = $em();
+
+                var hud = new bbq.hud.HtmlHud(scene.attr('id'));
+
+                var gameState = {};
+                for (var k in bbq.tutorialGameState) {
+                    gameState[k] = bbq.tutorialGameState[k];
+                    if (k === 'state') {
+                        gameState.state = {};
+                        for (var j in bbq.tutorialGameState[k]) {
+                            gameState.state[j] = bbq.tutorialGameState[k][j];
+                        }
+                    }
+                }
+                
+                var playerState = gameState.state.$playerid;
+                delete gameState.state.$playerid;
+                gameState.state[SharedSession.user.playerid] = playerState;
+
+                bbq.frontend.toast('Loading...', { id: 'sceneContainer', delay: -1, position: 'center', fade: false });
+                // load scripts if it hasn't already been loaded
+                if (!SharedSession.user.scriptsLoaded) {
+                    var scripts = ['assets/graphics/graphics.js'];//.concat(include.bbq_deferred || []);                    
+                    if (!production) {
+                    	scripts = scripts.concat(include.bbq_deferred || []); 
+                	}
+                    loadScripts(scripts, function () {
+                        onScriptsLoaded(gameState, hud);
+                    });
+                }
+                else {
+                    onScriptsLoaded(gameState, hud);
+                }
+            }
+
+            var RECAPTCHA_KEY = '6LckmuMSAAAAADLg6hMl0l58dc9-IWPC_uk30iqy';
+
+            // dev stuff
+            if (!window.location.origin)
+                window.location.origin = window.location.protocol + "//" + window.location.host;
+
+			var scripts = null;
+            if (window.location.origin.indexOf('http://localhost') == 0) {
+                // var scripts = include.config.concat(include.core).concat(include.bbq);                
+                // loadScripts(scripts, function () {
+                    // boc.constants.API_HOST = 'http://toptribe.cfapps.io:80';
+                    // boc.utils.requestApiKey();
+                    // SharedSession.user = {
+                        // playerid: 'mark'
+                    // };
+//                     
+                    // director.setContainer(document.getElementById('sceneContainer'));
+                    // var uiCache = bbq.UiCache;
+                    // uiCache.loadUi('ui/',
+                        // [
+                            // 'hud.html',
+                            // 'tribeMemberSelect.html',
+                            // 'yesNoWindow.html',
+                            // 'unitInfoWindow.html'
+                        // ],
+                        // function () {
+                            // director.push(uiCache['ui/hud.html'], null /*onload*/, uiLoaded);
+                        // },
+                        // ['ui.css']
+                    // );
+                // });                
+                scripts = include.config.concat(include.core).concat(include.bbq);
+            }
+
+            // production
+            else {
+                scripts = ['libs/bbq.compiled.js'];
+                production = true;
+            }
+            
+            loadScripts(scripts, function() {
+            	boc.constants.API_HOST = 'http://toptribe.cfapps.io:80';
+                boc.utils.requestApiKey();
+                SharedSession.user = {
+                    playerid: 'mark'
+                };
+                
+                director.setContainer(document.getElementById('sceneContainer'));
+                var uiCache = bbq.UiCache;
+                uiCache.loadUi('ui/',
+                    [
+                        'hud.html',
+                        'tribeMemberSelect.html',
+                        'yesNoWindow.html',
+                        'unitInfoWindow.html'
+                    ],
+                    function () {
+                        director.push(uiCache['ui/hud.html'], null /*onload*/, uiLoaded);
+                    },
+                    ['ui.css']
+                );
+            }); // loadScripts
+
+            //boc.constants.API_HOST = 'http://toptribe.mooo.com:3000';            
+        </script>
+    </head>
+    <body>
+        <div id="sceneContainer" class="sceneContainer"></div>           
+    </body>
+</html>

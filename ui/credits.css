@@ -1,0 +1,34 @@
+@charset "utf-8";
+/* CSS Document */
+
+.credits > div {
+	font-family: "bebas_neueregular";
+	font-size: 18px;
+	color: #fff;
+	margin: 10px;
+}
+
+div.blank {
+	height: 10px;
+}
+
+.credits > div > span {
+	margin: 30px;
+	font-size: 24px;
+}
+
+.credits > div.small {
+	font-size: 12px;
+}
+
+.credits > div > span.small {
+	font-size: 14px;
+}
+
+.credits > div.large {
+	font-size: 24px;
+}
+
+.credits > div > span.large {
+	font-size: 40px;
+}

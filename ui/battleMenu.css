@@ -1,0 +1,108 @@
+﻿@charset "utf-8";
+/* CSS Document */
+.sectionHeaderBg {
+	background-color: #40637e;
+	width: 100%;
+	height: 62px;
+	margin-bottom: 10px;
+} .sectionHeader {
+	padding: 15px;
+	font-size: 24px;
+} .section {
+	margin-left: auto;
+	margin-right: auto;
+	
+	text-align: center;
+	width: 800px;
+}
+
+.btnBattle {
+	display: inline-block;
+	position: relative;
+	width: 377px;
+	height: 150px;
+	margin: 5px;
+} .btnBattle:hover {
+	top: -5px;
+} .btnBattle:active {
+	transform: scale(0.95,0.95);
+	-ms-transform: scale(0.95,0.95); /* IE 9 */
+	-webkit-transform: scale(0.95,0.95); /* Safari and Chrome */
+	-o-transform: scale(0.95,0.95); /* Opera */
+	-moz-transform: scale(0.95,0.95); /* Firefox */
+} .btnBattleChiefImage {
+	position: absolute;
+	left: 24px;
+	top: 24px;
+	width: 100px;
+	height: 100px;
+} .btnBattleBg {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 377px;
+	height: 150px;
+	vertical-align: top;
+	display: inline-block;
+} .btnBattleYourTurnImage {
+	background-image: url("images/btn_horizontal_green.png");
+} .btnBattleWaitingImage {
+	background-image: url("images/btn_horizontal_blue.png");
+} .btnBattleFinishedImage {
+	background-image: url("images/btn_horizontal_gray.png");	
+} .btnBattleContent {
+	float: right;
+	width: 205px;
+	height: 120px;
+	margin: 10px 30px;
+	text-align: Center;
+	font-size: 26px;
+	text-shadow: 1px -1px 0px #333;
+} .btnBattleMap {
+	text-align: right;
+	font-size: 16px;
+} .btnBattleTurn {
+	margin-top: 40px;
+	font-size: 24px;
+	text-align: right;
+} .btnBattleResult {
+	margin: 20px auto;
+	text-align: center;
+} .btnBattleVictory {
+	width: 202px;
+	height: 54px;
+	background-image: url("images/battle_victory.png");
+} .btnBattleDefeat {
+	width: 182px;
+	height: 48px;
+	background-image: url("images/battle_defeat.png");
+}
+
+  .btnAccept {
+	position:absolute;
+	left: 130px;
+	top: 100px;
+	width: 110px;
+	height: 29px;
+	background-size: 110px 29px;	
+	background-image: url("images/btn_accept.png");
+	float:right;
+}
+	.btnAccept:active
+	{
+		top: 102px;
+	}
+
+
+.btnDecline {
+	position:absolute;
+	top: 100px;
+	right: 15px;
+	width: 110px;
+	height: 29px;
+	background-size: 110px 29px;	
+	background-image: url("images/btn_decline.png");
+	float:right;
+} .btnDecline:active {
+	top: 102px;
+}

@@ -1,0 +1,110 @@
+
+spearwarrior.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+default/blue/facepaint_left
+  rotate: false
+  xy: 144, 2
+  size: 10, 14
+  orig: 10, 14
+  offset: 0, 0
+  index: -1
+default/blue/facepaint_right
+  rotate: false
+  xy: 160, 10
+  size: 18, 18
+  orig: 18, 18
+  offset: 0, 0
+  index: -1
+default/blue/headband
+  rotate: false
+  xy: 78, 32
+  size: 80, 30
+  orig: 80, 30
+  offset: 0, 0
+  index: -1
+default/blue/kilt
+  rotate: false
+  xy: 228, 22
+  size: 24, 12
+  orig: 24, 12
+  offset: 0, 0
+  index: -1
+default/common/hand
+  rotate: false
+  xy: 180, 6
+  size: 10, 8
+  orig: 10, 8
+  offset: 0, 0
+  index: -1
+default/common/head
+  rotate: false
+  xy: 2, 2
+  size: 74, 60
+  orig: 74, 60
+  offset: 0, 0
+  index: -1
+default/common/leftLowerArm
+  rotate: false
+  xy: 198, 18
+  size: 14, 10
+  orig: 14, 10
+  offset: 0, 0
+  index: -1
+default/common/leftUpperArm
+  rotate: false
+  xy: 144, 18
+  size: 14, 12
+  orig: 14, 12
+  offset: 0, 0
+  index: -1
+default/common/leg
+  rotate: false
+  xy: 198, 4
+  size: 10, 12
+  orig: 10, 12
+  offset: 0, 0
+  index: -1
+default/common/rightLowerArm
+  rotate: false
+  xy: 180, 16
+  size: 16, 12
+  orig: 16, 12
+  offset: 0, 0
+  index: -1
+default/common/rightUpperArm
+  rotate: false
+  xy: 214, 16
+  size: 12, 12
+  orig: 12, 12
+  offset: 0, 0
+  index: -1
+default/common/spear
+  rotate: false
+  xy: 160, 30
+  size: 66, 10
+  orig: 66, 10
+  offset: 0, 0
+  index: -1
+default/common/torso
+  rotate: false
+  xy: 232, 36
+  size: 20, 26
+  orig: 20, 26
+  offset: 0, 0
+  index: -1
+pirate/blue/bandana
+  rotate: false
+  xy: 160, 42
+  size: 70, 20
+  orig: 70, 20
+  offset: 0, 0
+  index: -1
+pirate/blue/eyepatch
+  rotate: false
+  xy: 78, 6
+  size: 64, 24
+  orig: 64, 24
+  offset: 0, 0
+  index: -1

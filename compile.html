@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    
+    <script type="text/javascript" src="libs/core/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="libs/core/namespace.js"></script>
+    <script type="text/javascript" src="include/bbq.js"></script>
+    <script type="text/javascript" src="include/config.js"></script>
+    <script type="text/javascript" src="include/core.js"></script>       
+    
+    <script type="text/javascript">
+        var sl = function (scripts, complete) {
+            var total = scripts.length;
+            var loaded = 0;
+            var checkComplete = function () {
+                if (++loaded == total) {
+                    if (complete) {
+                        complete();
+                    }
+                }
+            };
+            for (var i = 0; i < total; i++) {
+                (function (_i) {
+                    if (scripts[_i] instanceof Array) {
+                        total--;
+                        return;
+                    }
+                    var scAhead = scripts[i + 1];
+                    $.get(scripts[_i], function (data) {
+                        $('textarea').text($('textarea').text() + data + '\n');
+                        if (scAhead && scAhead instanceof Array) {
+                            sl(scAhead, checkComplete);
+                        }
+                        else {
+                            checkComplete();
+                        }                        
+                    });                    
+                })(i);
+            }
+        };
+        sl(include.config.concat(include.core).concat(include.bbq_deferred).concat(include.bbq));
+    </script>
+</head>
+<body>
+    <textarea rows="25" cols="80"></textarea>
+    <a href="http://jscompress.com/">copy and paste here!</a>
+</body>
+</html>

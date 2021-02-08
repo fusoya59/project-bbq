@@ -1,0 +1,14 @@
+--- 
+applications: 
+- name: TopTribe
+  memory: 128M
+  instances: 1
+  url: TopTribe.cfapps.io
+  path: .
+  command: node app.js
+  services: 
+    mongolab-toptribe: 
+      label: mongolab
+      provider: mongolab
+      version: n/a
+      plan: sandbox

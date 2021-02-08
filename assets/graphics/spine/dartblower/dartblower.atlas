@@ -1,0 +1,124 @@
+
+dartblower.png
+format: RGBA8888
+filter: MipMapNearestNearest,MipMapNearestNearest
+repeat: none
+default/body
+  rotate: false
+  xy: 1, 29
+  size: 24, 30
+  orig: 24, 30
+  offset: 0, 0
+  index: -1
+default/facepaint1
+  rotate: false
+  xy: 1, 11
+  size: 14, 16
+  orig: 14, 16
+  offset: 0, 0
+  index: -1
+default/facepaint2
+  rotate: false
+  xy: 43, 33
+  size: 8, 12
+  orig: 8, 12
+  offset: 0, 0
+  index: -1
+default/head
+  rotate: false
+  xy: 1, 61
+  size: 94, 66
+  orig: 94, 66
+  offset: 0, 0
+  index: -1
+default/kilt
+  rotate: false
+  xy: 97, 109
+  size: 30, 18
+  orig: 30, 18
+  offset: 0, 0
+  index: -1
+default/leftAxe
+  rotate: false
+  xy: 27, 47
+  size: 16, 12
+  orig: 16, 12
+  offset: 0, 0
+  index: -1
+default/leftHand
+  rotate: false
+  xy: 97, 77
+  size: 12, 14
+  orig: 12, 14
+  offset: 0, 0
+  index: -1
+default/leftLowerArm
+  rotate: false
+  xy: 117, 97
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
+default/leftLowerLeg
+  rotate: false
+  xy: 117, 85
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
+default/leftUpperArm
+  rotate: false
+  xy: 17, 13
+  size: 8, 14
+  orig: 8, 14
+  offset: 0, 0
+  index: -1
+default/leftUpperLeg
+  rotate: false
+  xy: 27, 33
+  size: 14, 12
+  orig: 14, 12
+  offset: 0, 0
+  index: -1
+default/rightAxe
+  rotate: false
+  xy: 97, 93
+  size: 18, 14
+  orig: 18, 14
+  offset: 0, 0
+  index: -1
+default/rightHand
+  rotate: false
+  xy: 45, 47
+  size: 14, 12
+  orig: 14, 12
+  offset: 0, 0
+  index: -1
+default/rightLowerArm
+  rotate: false
+  xy: 97, 63
+  size: 12, 12
+  orig: 12, 12
+  offset: 0, 0
+  index: -1
+default/rightLowerLeg
+  rotate: false
+  xy: 27, 21
+  size: 12, 10
+  orig: 12, 10
+  offset: 0, 0
+  index: -1
+default/rightUpperArm
+  rotate: false
+  xy: 61, 45
+  size: 8, 14
+  orig: 8, 14
+  offset: 0, 0
+  index: -1
+default/rightUpperLeg
+  rotate: false
+  xy: 1, 1
+  size: 12, 8
+  orig: 12, 8
+  offset: 0, 0
+  index: -1

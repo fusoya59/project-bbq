@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+
+<script type="text/javascript" src="common.js"></script>    
+<link href="ui2.css" rel="stylesheet" type="text/css" />
+<link href="createAccount.css" rel="stylesheet" type="text/css" />
+</head>
+
+<style type="text/css">
+</style>
+
+<body class="noSelect noDrag">
+<div class="mainWindow mainBgColour">
+	<div class="frontendHeader">
+    	<div class="content">
+        	<div class="headerButtonLeft">
+                <a id="btnBack" href="mainMenu3.html">
+                    <div class="buttonContainer">
+                        <div class="button buttonBlue btn50x50">
+                            <img class="back" />
+                            <span class="label">Back</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="headerButtonRight">
+                <div class="buttonContainer">
+                    <div id="btnCreateAccount" class="button buttonBlue btnWord">
+                    	<div class="content">
+                        	<span class="labelLarge">Create Account</span>
+                    	</div>
+                    </div>
+                </div>
+            </div>
+		</div>
+    </div>
+    <div class="frontendBodyNoFooter vertScroll skinnedScrollbar">
+		<div class="flood table">
+    	<div class="vAlign">
+        <div class="content">
+        <div class="createAccount">
+            <div class="createAccountMessageBg" style="display:none">
+                Display name already exists! Please try a different name.
+            </div>        
+            <div class="createAccountBg vertScroll">
+            <form class="form">
+                <div class="newAccountItem"><input name="create_email" class="createAccountInput" placeholder="Email" /></div>
+                <div class="newAccountItem"><input name="confirm_email" class="createAccountInput" placeholder="Re-type Email" /></div>
+                <div class="newAccountItem displayName"><input name="displayName" class="createAccountInput" placeholder="Display Name" /></div>
+                <div class="newAccountItem"><input name="create_password"class="createAccountInput" type="password" placeholder="Password" /></div>
+                <div class="newAccountItem"><input name="confirm_password"class="createAccountInput" type="password" placeholder="Confirm Password" /></div>
+<!--
+                <div class="newAccountItem">
+                    <div id="recatpchaDiv" class="captcha">
+                        <div id='recaptchaCustomWidget'>
+        		           <div id="recaptcha_image" class='cloginItem' class="captcha"></div> 
+        		           <!--<div class="recaptcha_only_if_incorrect_sol" style="color:red">Incorrect please try again</div>-->
+				           <!--<div class="recaptcha_only_if_image cloginItem cloginDesc">Enter the words above</div>				   -->
+				           <!--<input type="text" id="recaptcha_response_field" name="recaptcha_response_field" class='cloginInput' />        		        </div>
+                    </div>
+                </div>
+                <div class="newAccountItem"><input id="recaptcha_response_field" name="recaptcha_response_field" class="createAccountInput" placeholder="Enter the words above" /></div>
+-->
+            </form>
+            </div>
+        </div>
+        
+    </div>
+    <!--<div class="footer"></div>    -->
+</div>
+
+<div id="" class="fadeBlack hidden"></div>
+
+</body>
+<script type="text/javascript">
+    bbq.frontend.setupCreateAccount();
+</script>
+</html>

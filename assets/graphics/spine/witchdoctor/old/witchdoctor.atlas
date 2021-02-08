@@ -1,0 +1,96 @@
+
+witchdoctor.png
+format: RGBA8888
+filter: MipMapNearestNearest,MipMapNearestNearest
+repeat: none
+default/body
+  rotate: false
+  xy: 1, 3
+  size: 20, 22
+  orig: 20, 22
+  offset: 0, 0
+  index: -1
+default/hand
+  rotate: false
+  xy: 23, 1
+  size: 10, 8
+  orig: 10, 8
+  offset: 0, 0
+  index: -1
+default/head
+  rotate: false
+  xy: 197, 77
+  size: 54, 50
+  orig: 54, 50
+  offset: 0, 0
+  index: -1
+default/headdress
+  rotate: false
+  xy: 103, 59
+  size: 92, 68
+  orig: 92, 68
+  offset: 0, 0
+  index: -1
+default/kilt
+  rotate: false
+  xy: 197, 61
+  size: 22, 14
+  orig: 22, 14
+  offset: 0, 0
+  index: -1
+default/leftLowerArm
+  rotate: false
+  xy: 137, 49
+  size: 8, 8
+  orig: 8, 8
+  offset: 0, 0
+  index: -1
+default/leftUpperArm
+  rotate: false
+  xy: 117, 37
+  size: 10, 8
+  orig: 10, 8
+  offset: 0, 0
+  index: -1
+default/leg
+  rotate: false
+  xy: 23, 11
+  size: 8, 14
+  orig: 8, 14
+  offset: 0, 0
+  index: -1
+default/necklace
+  rotate: false
+  xy: 117, 47
+  size: 18, 10
+  orig: 18, 10
+  offset: 0, 0
+  index: -1
+default/ref
+  rotate: false
+  xy: 1, 27
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+default/rightLowerArm
+  rotate: false
+  xy: 221, 65
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
+default/rightUpperArm
+  rotate: false
+  xy: 33, 13
+  size: 6, 12
+  orig: 6, 12
+  offset: 0, 0
+  index: -1
+default/staff
+  rotate: false
+  xy: 103, 15
+  size: 12, 42
+  orig: 12, 42
+  offset: 0, 0
+  index: -1

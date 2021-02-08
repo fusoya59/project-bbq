@@ -1,0 +1,65 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+.form {
+}
+
+.newAccountItem {
+	margin: 5px 0;
+}
+
+input[name='displayName'] {
+	margin-top: 10px;
+}
+
+.createAccount {
+	//display: inline-block;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.createAccountBg {
+	display: inline-block;
+	background-color: #333b47;
+	padding: 15px;
+	border-radius: 10px;
+	border: 1px solid #fff;
+}
+
+.captcha {
+	margin-top: 10px;
+	display: inline-block;
+	height: 100px;
+	width: 300px;
+	background-color: #fff;
+	border-radius: 10px;
+}
+
+.createAccountMessageBg {
+	font-family: "JungleFeverRegular";
+	font-size: 18px;
+	color: #fff;
+	margin-bottom: 20px;
+	display: none;
+	background-color: #F73F2B;
+	padding: 15px;
+	//border-radius: 10px;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+}
+
+
+.createAccountInput {
+	border: 1px solid #334452;
+	padding: 4px;
+	font-size: 16px;
+	width: 300px;
+	height: 20px;
+	border-radius: 5px;
+}
+
+#recaptcha_image img {
+    width: 300px !important;    
+    height:100px !important;
+    border-radius: 10px;
+}

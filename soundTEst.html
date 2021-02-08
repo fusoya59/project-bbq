@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>    
+    <script type="text/javascript" src="libs/core/namespace.js"></script>
+    <script type="text/javascript" src="libs/core/entitysystem.js"></script>
+    <script type="text/javascript" src="assets/sounds/sounds.js"></script>
+    <script type="text/javascript" src="libs/core/utils/SoundManager.js"></script>
+    <script type="text/javascript" src="libs/bbq/components/Unit.js"></script>
+    <script type="text/javascript" src="libs/bbq/SoundHelper.js"></script>
+
+</head>
+<body>
+    <script type="text/javascript">        
+        boc.sm().loadFiles(bbq.assets.sounds, function (s) {
+            console.log('complete');
+        });
+
+        var sh = new bbq.SoundHelper();
+        var u = $em.create();
+        $em(u).add(new bbq.components.Unit({ type: 'Catapult' }));
+        
+    </script>
+</body>
+</html>

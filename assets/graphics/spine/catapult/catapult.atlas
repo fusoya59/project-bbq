@@ -1,0 +1,61 @@
+
+catapult.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+default/ammo
+  rotate: false
+  xy: 320, 38
+  size: 22, 22
+  orig: 22, 22
+  offset: 0, 0
+  index: -1
+default/beam
+  rotate: false
+  xy: 2, 2
+  size: 98, 58
+  orig: 98, 58
+  offset: 0, 0
+  index: -1
+default/beamOverlay
+  rotate: false
+  xy: 260, 36
+  size: 30, 24
+  orig: 30, 24
+  offset: 0, 0
+  index: -1
+default/chasisBg
+  rotate: false
+  xy: 102, 22
+  size: 64, 38
+  orig: 64, 38
+  offset: 0, 0
+  index: -1
+default/leftBrace
+  rotate: false
+  xy: 168, 4
+  size: 28, 56
+  orig: 28, 56
+  offset: 0, 0
+  index: -1
+default/leftWheel
+  rotate: false
+  xy: 226, 30
+  size: 32, 30
+  orig: 32, 30
+  offset: 0, 0
+  index: -1
+default/rightBrace
+  rotate: false
+  xy: 198, 12
+  size: 26, 48
+  orig: 26, 48
+  offset: 0, 0
+  index: -1
+default/rightWheel
+  rotate: false
+  xy: 292, 34
+  size: 26, 26
+  orig: 26, 26
+  offset: 0, 0
+  index: -1

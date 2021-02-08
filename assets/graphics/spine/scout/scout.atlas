@@ -1,0 +1,96 @@
+
+scout.png
+format: RGBA8888
+filter: MipMapNearestNearest,MipMapNearestNearest
+repeat: none
+default/body
+  rotate: false
+  xy: 93, 5
+  size: 20, 24
+  orig: 20, 24
+  offset: 0, 0
+  index: -1
+default/dagger
+  rotate: false
+  xy: 129, 35
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
+default/facePaint1
+  rotate: false
+  xy: 93, 31
+  size: 34, 14
+  orig: 34, 14
+  offset: 0, 0
+  index: -1
+default/facepaint2
+  rotate: false
+  xy: 93, 47
+  size: 64, 14
+  orig: 64, 14
+  offset: 0, 0
+  index: -1
+default/hand
+  rotate: false
+  xy: 115, 19
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
+default/head
+  rotate: false
+  xy: 1, 1
+  size: 90, 60
+  orig: 90, 60
+  offset: 0, 0
+  index: -1
+default/kilt
+  rotate: false
+  xy: 159, 51
+  size: 18, 10
+  orig: 18, 10
+  offset: 0, 0
+  index: -1
+default/leftLowerArm
+  rotate: false
+  xy: 191, 51
+  size: 6, 10
+  orig: 6, 10
+  offset: 0, 0
+  index: -1
+default/leftUpperArm
+  rotate: false
+  xy: 141, 35
+  size: 8, 10
+  orig: 8, 10
+  offset: 0, 0
+  index: -1
+default/lowerLeg
+  rotate: false
+  xy: 179, 51
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
+default/rightLowerArm
+  rotate: false
+  xy: 199, 53
+  size: 8, 8
+  orig: 8, 8
+  offset: 0, 0
+  index: -1
+default/rightUpperArm
+  rotate: false
+  xy: 115, 5
+  size: 6, 12
+  orig: 6, 12
+  offset: 0, 0
+  index: -1
+default/upperLeg
+  rotate: false
+  xy: 151, 37
+  size: 6, 8
+  orig: 6, 8
+  offset: 0, 0
+  index: -1

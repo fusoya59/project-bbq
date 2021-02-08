@@ -1,0 +1,251 @@
+{
+"bones": [
+	{ "name": "root" },
+	{ "name": "cog", "parent": "root", "x": -5.96, "y": -10.26 },
+	{ "name": "base", "parent": "cog", "x": -4.28, "y": -1.44 },
+	{ "name": "frontAxle", "parent": "cog", "x": -27.08, "y": 1.35 },
+	{ "name": "rearAxle", "parent": "cog", "x": 18.51, "y": 1.95 },
+	{ "name": "beam", "parent": "frontAxle", "length": 75.93, "x": 8.39, "y": 24.2, "rotation": -26.74 },
+	{ "name": "leftArm", "parent": "frontAxle", "length": 53.99, "y": -16.79, "rotation": 75.43 },
+	{ "name": "leftFrontWheel", "parent": "frontAxle", "x": -0.4, "y": -20.99 },
+	{ "name": "leftRearWheel", "parent": "rearAxle", "x": 2, "y": -21.59 },
+	{ "name": "rightArm", "parent": "frontAxle", "length": 50, "x": 1.99, "y": 7.2, "rotation": 75.43 },
+	{ "name": "rightFrontWheel", "parent": "frontAxle", "x": -0.4, "y": 16 },
+	{ "name": "rightRearWheel", "parent": "rearAxle", "y": 15.4 },
+	{ "name": "ammo", "parent": "beam", "x": 65.37, "y": 8.56 }
+],
+"slots": [
+	{ "name": "rightRearWheel", "bone": "rightRearWheel", "attachment": "rightRearWheel" },
+	{ "name": "rightFrontWheel", "bone": "rightFrontWheel", "attachment": "rightFrontWheel" },
+	{ "name": "rightArm", "bone": "rightArm", "attachment": "rightArm" },
+	{ "name": "base", "bone": "base", "attachment": "base" },
+	{ "name": "beam", "bone": "beam", "attachment": "beam" },
+	{ "name": "leftArm", "bone": "leftArm", "attachment": "leftArm" },
+	{ "name": "ammo", "bone": "ammo", "attachment": "ammo" },
+	{ "name": "beamOverlay", "bone": "beam", "attachment": "beamOverlay" },
+	{ "name": "leftFrontWheel", "bone": "leftFrontWheel", "attachment": "leftFrontWheel" },
+	{ "name": "leftRearWheel", "bone": "leftRearWheel", "attachment": "leftRearWheel" }
+],
+"skins": {
+	"defaultSkin": {
+		"ammo": {
+			"ammo": { "name": "default/ammo", "x": -0.28, "y": -0.72, "rotation": 26.74, "width": 22, "height": 22 }
+		},
+		"base": {
+			"base": { "name": "default/chasisBg", "x": 0.25, "y": -0.28, "width": 64, "height": 38 }
+		},
+		"beam": {
+			"beam": { "name": "default/beam", "x": 28.43, "y": 0.57, "rotation": 26.74, "width": 98, "height": 58 }
+		},
+		"beamOverlay": {
+			"beamOverlay": { "name": "default/beamOverlay", "x": 66.45, "y": 0.68, "rotation": 26.74, "width": 30, "height": 24 }
+		},
+		"leftArm": {
+			"leftArm": { "name": "default/leftBrace", "x": 27.63, "y": -0.11, "rotation": -75.43, "width": 28, "height": 56 }
+		},
+		"leftFrontWheel": {
+			"leftFrontWheel": { "name": "default/leftWheel", "x": -0.54, "y": 0.91, "width": 32, "height": 30 }
+		},
+		"leftRearWheel": {
+			"leftRearWheel": { "name": "default/leftWheel", "x": -0.54, "y": 0.91, "width": 32, "height": 30 }
+		},
+		"rightArm": {
+			"rightArm": { "name": "default/rightBrace", "x": 26.41, "y": 0.6, "rotation": -75.43, "width": 26, "height": 48 }
+		},
+		"rightFrontWheel": {
+			"rightFrontWheel": { "name": "default/rightWheel", "x": 0.45, "y": 1.91, "width": 26, "height": 26 }
+		},
+		"rightRearWheel": {
+			"rightRearWheel": { "name": "default/rightWheel", "x": 0.45, "y": 1.91, "width": 26, "height": 26 }
+		}
+	}
+},
+"events": {},
+"animations": {
+	"attack": {
+		"bones": {
+			"beam": {
+				"rotate": [
+					{ "time": 0, "angle": 0 },
+					{ "time": 0.3333, "angle": -4.34 },
+					{ "time": 0.6666, "angle": -5.4, "curve": "stepped" },
+					{ "time": 1.1, "angle": -5.4 },
+					{ "time": 1.1666, "angle": 94.14 },
+					{ "time": 1.2666, "angle": 87.35 },
+					{ "time": 1.3666, "angle": 94.14 },
+					{ "time": 1.5666, "angle": 93.09 },
+					{ "time": 2, "angle": 0, "curve": "stepped" },
+					{ "time": 2.3333, "angle": 0 }
+				],
+				"translate": [
+					{ "time": 0, "x": 0, "y": 0 },
+					{ "time": 0.3333, "x": 1.2, "y": -0.6 },
+					{ "time": 0.6666, "x": 1.8, "y": -1.2, "curve": "stepped" },
+					{ "time": 1.1666, "x": 0, "y": 0 }
+				]
+			},
+			"rightArm": {
+				"rotate": [
+					{ "time": 0, "angle": 0 },
+					{ "time": 0.3333, "angle": -4.43 },
+					{ "time": 0.6666, "angle": -7.11, "curve": "stepped" },
+					{ "time": 1.1333, "angle": -7.11 },
+					{ "time": 1.1666, "angle": -3.05 },
+					{ "time": 1.2666, "angle": 1.43 },
+					{ "time": 1.3666, "angle": -3.05 },
+					{ "time": 1.5666, "angle": 0.93 },
+					{ "time": 2, "angle": 0 }
+				]
+			},
+			"leftArm": {
+				"rotate": [
+					{ "time": 0, "angle": 0 },
+					{ "time": 0.3333, "angle": -4.43 },
+					{ "time": 0.6666, "angle": -5.1, "curve": "stepped" },
+					{ "time": 1.1333, "angle": -5.1 },
+					{ "time": 1.1666, "angle": 0.21 },
+					{ "time": 1.2666, "angle": 2.3 },
+					{ "time": 1.3666, "angle": 0.21 },
+					{ "time": 1.5666, "angle": 1.79 },
+					{ "time": 2, "angle": 0 }
+				]
+			},
+			"cog": {
+				"rotate": [
+					{ "time": 0, "angle": 0, "curve": "stepped" },
+					{ "time": 1.1666, "angle": 0 },
+					{ "time": 1.2666, "angle": 2.72 },
+					{ "time": 1.3666, "angle": -2.1 },
+					{ "time": 1.4666, "angle": 2.7 },
+					{ "time": 1.5666, "angle": 0, "curve": "stepped" },
+					{ "time": 2, "angle": 0, "curve": "stepped" },
+					{ "time": 2.3333, "angle": 0 }
+				],
+				"translate": [
+					{ "time": 0, "x": 0, "y": 0, "curve": "stepped" },
+					{ "time": 1.1666, "x": 0, "y": 0 },
+					{ "time": 1.3333, "x": 0, "y": 3.22 },
+					{ "time": 1.4, "x": 0, "y": 0 },
+					{ "time": 1.4666, "x": 0, "y": 0.68 },
+					{ "time": 1.5666, "x": 0, "y": 1.45 },
+					{ "time": 1.6666, "x": 0, "y": 0, "curve": "stepped" },
+					{ "time": 2, "x": 0, "y": 0, "curve": "stepped" },
+					{ "time": 2.3333, "x": 0, "y": 0 }
+				]
+			}
+		},
+		"slots": {
+			"ammo": {
+				"attachment": [
+					{ "time": 0, "name": "ammo" },
+					{ "time": 1.1, "name": null },
+					{ "time": 1.8333, "name": "ammo" },
+					{ "time": 2, "name": "ammo" }
+				],
+				"color": [
+					{ "time": 1.8333, "color": "ffffff00" },
+					{ "time": 2.3333, "color": "ffffffff" }
+				]
+			}
+		}
+	},
+	"idle": {
+		"bones": {
+			"base": {
+				"rotate": [
+					{ "time": 0, "angle": 0 },
+					{ "time": 0.4, "angle": 2.09 },
+					{ "time": 0.6666, "angle": 358.2 },
+					{ "time": 0.8333, "angle": 0 }
+				],
+				"translate": [
+					{ "time": 0, "x": 0, "y": 0 },
+					{ "time": 0.4, "x": 0, "y": -1 },
+					{ "time": 0.8333, "x": 0, "y": 0 }
+				]
+			},
+			"frontAxle": {
+				"translate": [
+					{ "time": 0, "x": 0, "y": 0 },
+					{ "time": 0.4, "x": 0, "y": -2 },
+					{ "time": 0.8333, "x": 0, "y": 0 }
+				]
+			},
+			"beam": {
+				"rotate": [
+					{ "time": 0, "angle": 358.79 },
+					{ "time": 0.4, "angle": 361.49 },
+					{ "time": 0.6333, "angle": 357.31 },
+					{ "time": 0.8333, "angle": 358.79 }
+				]
+			},
+			"rearAxle": {
+				"translate": [
+					{ "time": 0, "x": 0, "y": 0, "curve": "stepped" },
+					{ "time": 0.2333, "x": 0, "y": 0 },
+					{ "time": 0.5666, "x": 0, "y": -2 },
+					{ "time": 0.8333, "x": 0, "y": 0 }
+				]
+			}
+		}
+	},
+	"move": {
+		"bones": {
+			"leftFrontWheel": {
+				"rotate": [
+					{ "time": 0, "angle": 0 }
+				],
+				"translate": [
+					{ "time": 0, "x": 0, "y": 0 },
+					{ "time": 0.1, "x": 0, "y": 2 },
+					{ "time": 0.2, "x": 0, "y": -3 },
+					{ "time": 0.3333, "x": 0, "y": 0 }
+				]
+			},
+			"leftRearWheel": {
+				"translate": [
+					{ "time": 0, "x": 0, "y": 2 },
+					{ "time": 0.1, "x": 0, "y": -2 },
+					{ "time": 0.2333, "x": 0, "y": 0 },
+					{ "time": 0.3333, "x": 0, "y": 2 }
+				]
+			},
+			"rightRearWheel": {
+				"translate": [
+					{ "time": 0, "x": 0, "y": -1.52 },
+					{ "time": 0.1666, "x": 0, "y": 0.75 },
+					{ "time": 0.3333, "x": 0, "y": -1.52 }
+				]
+			},
+			"rightFrontWheel": {
+				"translate": [
+					{ "time": 0, "x": 0, "y": 2.99 },
+					{ "time": 0.2, "x": 0, "y": 0 },
+					{ "time": 0.3333, "x": 0, "y": 2.99 }
+				]
+			},
+			"beam": {
+				"rotate": [
+					{ "time": 0, "angle": 0 },
+					{ "time": 0.2, "angle": -3.12 },
+					{ "time": 0.3333, "angle": 0 }
+				]
+			},
+			"leftArm": {
+				"rotate": [
+					{ "time": 0, "angle": 0 },
+					{ "time": 0.2, "angle": -2.32 },
+					{ "time": 0.3333, "angle": 0 }
+				]
+			},
+			"rightArm": {
+				"rotate": [
+					{ "time": 0, "angle": 0 },
+					{ "time": 0.2, "angle": -2.32 },
+					{ "time": 0.3333, "angle": 0 }
+				]
+			}
+		}
+	}
+}
+}

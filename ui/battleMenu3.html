@@ -1,0 +1,243 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<title>Untitled Document</title>
+<!--<script src="../libs/core/jquery-1.9.1.min.js"></script>-->
+<script src="common.js"></script>
+<link href="ui2.css" rel="stylesheet" type="text/css" />
+<link href="battleMenu2.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="">
+<div class="frontendHeader">
+	<div class="content">
+    	<div class="frontendButtonLeft">
+            <div class="buttonContainer">
+                <a href="mainMenu2.html" id="battle_backButton" class="button buttonBlue btn50x50">
+                    <img class="back"/>
+                    <span class="label">Back</span>
+                </a>
+            </div>
+        </div>
+    	<div class="frontendButtonRight">
+            <div id="refreshBtn" class="buttonContainer">
+                <div class="button buttonBlue btn50x50 boxShadow">
+                    <img class="refresh" />
+                    <span class="labelSmall">
+                    	Refresh
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="frontendBody">
+	<div class="panel">
+		<div id="currentBattles" class="panelFlood vertScroll skinnedScrollbar">
+        <div id="findMatch" class="buttonContainer battleContainer">
+            <div class="btnBattlePosition">
+                <div class="button btnFindBattle">
+                    <div class="content">
+                        <div class="button btn35x35">
+                            <img class="cross" />
+                        </div>
+                    </div>
+                    <div class="content">
+                        <span class="labelLarge">Find a Match</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="buttonContainer battleContainer battleButton" paneltype="tutorial">
+            <div class="battleStatusRight">Your Turn!</div>
+            <div class="btnBattlePosition">
+                <div class="button buttonBlue btnBattle">
+                    <img class="check" />
+                    <span class="battleName labelLarge">Start Tutorial</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="buttonContainer battleContainer battleButton" paneltype="yourturn">
+            <div class="battleStatusRight">Your Turn!</div>
+            <div class="battleMap">
+            	<div class="label">
+                	<span>Map</span>
+                </div>
+                <div class="value">
+                	<span>$mapid</span>
+                </div>
+			</div>
+            <div class="btnBattlePosition">
+                <div class="button buttonBlue btnBattle">
+                    <img class="check" />
+                    <span class="battleName labelLarge">$opponent</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="buttonContainer battleContainer battleButton" paneltype="waiting">
+            <div class="battleStatusLeft">Waiting...</div>
+            <div class="battleMap">
+            	<div class="label">
+                	<span>Map</span>
+                </div>
+                <div class="value">
+                	<span>$mapid</span>
+                </div>
+			</div>
+            <div class="btnBattlePosition">
+                <div class="button buttonYellow btnBattle">
+                    <img class="clock" />
+                    <span class="battleName labelLarge">$opponent</span>
+                </div>
+            </div>
+        </div>
+    
+        <div class="buttonContainer battleContainer battleButton" paneltype="collectwin">
+            <div class="battleStatusRight">Collect</div>
+            <div class="battleMap">
+            	<div class="label">
+                	<span>Map</span>
+                </div>
+                <div class="value">
+                	<span>$mapid</span>
+                </div>
+			</div>
+            <div class="btnBattlePosition">
+                <div class="button buttonBlue btnBattle">
+                    <img class="win" />
+                    <span class="battleName labelLarge">$opponent</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="buttonContainer battleContainer battleButton" paneltype="collectlose">
+            <div class="battleStatusRight">Collect</div>
+            <div class="battleMap">
+            	<div class="label">
+                	<span>Map</span>
+                </div>
+                <div class="value">
+                	<span>$mapid</span>
+                </div>
+			</div>
+            <div class="btnBattlePosition">
+                <div class="button buttonBlue btnBattle">
+                    <img class="lose" />
+                    <span class="battleName labelLarge">$opponent</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="buttonContainer battleContainer" paneltype="searching">
+            <div class="btnBattlePosition">
+                <div class="button btnFindBattle">
+                    <div class="content">
+						<img class="magnify" />
+                    </div>
+                    <div class="content">
+                        <span class="labelLarge">Searching...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="buttonContainer battleContainer battleButton">
+            <div class="battleStatusRight">Your Turn!</div>
+            <div class="btnBattlePosition">
+                <div class="button buttonBlue btnBattle">
+                    <div class="content">
+                        <img class="check" />
+                    </div>
+                    <div class="content">
+                        <span class="labelLarge">SuppaDuppaX</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="buttonContainer battleContainer battleButton">
+            <div class="battleStatusRight">Your Turn!</div>
+            <div class="btnBattlePosition">
+                <div class="button buttonBlue btnBattle">
+                    <div class="content">
+                        <img class="check" />
+                    </div>
+                    <div class="content">
+                        <span class="labelLarge">SuppaDuppaX</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="buttonContainer battleContainer battleButton">
+            <div class="battleStatusRight">Your Turn!</div>
+            <div class="btnBattlePosition">
+                <div class="button buttonBlue btnBattle">
+                    <div class="content">
+                        <img class="check" />
+                    </div>
+                    <div class="content">
+                        <span class="labelLarge">SuppaDuppaX</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="buttonContainer battleContainer battleButton">
+            <div class="battleStatusRight">Your Turn!</div>
+            <div class="btnBattlePosition">
+                <div class="button buttonBlue btnBattle">
+                    <div class="content">
+                        <img class="check" />
+                    </div>
+                    <div class="content">
+                        <span class="labelLarge">SuppaDuppaX</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="buttonContainer battleContainer battleButton">
+            <div class="battleStatusRight">Your Turn!</div>
+            <div class="btnBattlePosition">
+                <div class="button buttonBlue btnBattle">
+                    <div class="content">
+                        <img class="check" />
+                    </div>
+                    <div class="content">
+                        <span class="labelLarge">SuppaDuppaX</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="buttonContainer battleContainer battleButton">
+            <div class="battleStatusRight">Your Turn!</div>
+            <div class="btnBattlePosition">
+                <div class="button buttonBlue btnBattle">
+                    <div class="content">
+                        <img class="check" />
+                    </div>
+                    <div class="content">
+                        <span class="labelLarge">SuppaDuppaX</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>
+    
+    </div>
+</div>
+
+<div id="footer">
+</div>
+</body>
+<script type="text/javascript">
+    //bbq.frontend.setupBattleMenu();
+</script>
+</html>

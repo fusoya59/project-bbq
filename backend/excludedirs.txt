@@ -1,0 +1,7 @@
+C:\Users\Owner\Dropbox\bbq\backend\.svn
+C:\Users\Owner\Dropbox\bbq\backend\libs\.svn
+C:\Users\Owner\Dropbox\bbq\backend\libs\routing\.svn
+C:\Users\Owner\Dropbox\bbq\backend\resources\.svn
+excludedirs.txt 
+deploy.bat 
+RSAKeyGenerator.zip 
